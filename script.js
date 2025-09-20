@@ -1,4 +1,4 @@
- function scrollToSection(sectionId) {
+function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({
                 behavior: 'smooth'
             });
@@ -327,9 +327,13 @@
             if (sectionType === 'projects') {
                 document.getElementById('projectsSection').classList.remove('hidden');
                 document.getElementById('projectsBtn').className = 'px-6 py-3 rounded-full font-semibold transition-all border-2 border-purple-400 text-purple-400';
+                // Reset project filters to show all projects
+                filterProjects('all');
             } else if (sectionType === 'certificates') {
                 document.getElementById('certificatesSection').classList.remove('hidden');
                 document.getElementById('certificatesBtn').className = 'px-6 py-3 rounded-full font-semibold transition-all border-2 border-orange-400 text-orange-400';
+                // Reset certificate filters to show all certificates
+                filterCertificates('all');
             } else if (sectionType === 'experience') {
                 document.getElementById('experienceSection').classList.remove('hidden');
                 document.getElementById('experienceBtn').className = 'px-6 py-3 rounded-full font-semibold transition-all border-2 border-indigo-400 text-indigo-400';
