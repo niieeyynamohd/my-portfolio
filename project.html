@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link href="./output.css" rel="stylesheet">
+    <!-- <link href="./style.css" rel="stylesheet"> -->
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-purple-500/20">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold flex items-center">
+                    <span class="text-blue-400 animate-pulse" style="animation-duration: 2s;">N</span>
+                    <span class="text-purple-400 animate-pulse" style="animation-duration: 2s; animation-delay: 0.5s;">M</span>
+                </div>
+                <button onclick="goBack()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details Section -->
+    <section class="pt-24 pb-20 min-h-screen">
+        <div class="max-w-4xl mx-auto px-6">
+            <div id="projectDetails" class="bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 p-8">
+                <!-- Content will be inserted by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to go back
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        // Get project type from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectType = urlParams.get('type');
+
+        // Project details data
+        const projectDetails = {
+            'student-clearance': {
+                title: 'Student Clearance System',
+                description: 'Student Clearance system is a web-based application that streamlines the clearance process for students, allowing them to easily obtain necessary approvals and complete required tasks before graduation.',
+                features: [
+                    'Streamlined clearance process',
+                    'Digital approval workflow',
+                    'Real-time status tracking',
+                    'Automated notifications',
+                    'Secure document storage',
+                    'Comprehensive reporting'
+                ],
+                tech: ['HTML', 'CSS', 'JSON / API', 'AppWizard'],
+                image: 'image/project 1.png'
+            },
+            'staff-clearance': {
+                title: 'Staff Exit Clearance System',
+                description: 'Staff Exit Clearance System is a web-based application that simplifies the exit clearance process for employees, ensuring a smooth transition when they leave the organization.',
+                features: [
+                    'Simplified exit process',
+                    'Digital checklist management',
+                    'Automated routing',
+                    'Status monitoring',
+                    'Document archiving',
+                    'Compliance tracking'
+                ],
+                tech: ['HTML', 'CSS', 'API / JSON', 'AppWizard'],
+                image: 'image/project 2.png'
+            },
+            'custom-report': {
+                title: 'Custom Screen Printable Report Appraisal',
+                description: 'Custom Screen display report appraisal and printable report for staff performance evaluations.',
+                features: [
+                    'Customizable report templates',
+                    'Interactive dashboard',
+                    'Print-ready formatting',
+                    'Data visualization',
+                    'Performance metrics',
+                    'Export functionality'
+                ],
+                tech: ['JSON / API', 'HTML', 'CSS', 'AppWizard'],
+                image: 'image/report.png'
+            },
+            'lingozan': {
+                title: 'Lingozan: Gamification of Kadazan Dusun Language Learning',
+                description: 'Lingozan is a mobile app that gamifies the learning of the Kadazan Dusun language through interactive lessons, quizzes, and game to make language acquisition fun and engaging.',
+                features: [
+                    'Interactive language lessons',
+                    'Gamified learning experience',
+                    'Progress tracking',
+                    'Cultural context integration',
+                    'Audio pronunciation guide',
+                    'Achievement system'
+                ],
+                tech: ['Kotlin', 'Java', 'Firebase'],
+                image: 'image/project.png'
+            },
+            'smart-room': {
+                title: 'IOT Project Cisco: Smart Study Room',
+                description: 'Cisco IOT project that creates a smart study room environment using sensors and automation to enhance comfort and productivity.',
+                features: [
+                    'Automated lighting control',
+                    'Climate management',
+                    'Occupancy sensing',
+                    'Energy optimization',
+                    'Remote monitoring',
+                    'Security integration'
+                ],
+                tech: ['Netacad', 'Cisco'],
+                image: 'image/iot.png'
+            },
+            'typing-game': {
+                title: 'Typing Game Web Application',
+                description: 'A fun and interactive web application that helps users improve their typing skills through various games and challenges.',
+                features: [
+                    'Interactive typing games',
+                    'Skill level progression',
+                    'Performance analytics',
+                    'Customizable lessons',
+                    'Real-time feedback',
+                    'Leaderboard system'
+                ],
+                tech: ['HTML', 'CSS', 'JavaScript'],
+                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            }
+        };
+
+        // Get the project data
+        const project = projectDetails[projectType];
+
+        if (project) {
+            // Build the HTML for project details
+            const projectHTML = `
+                <div class="mb-8">
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-64 object-cover rounded-xl mb-6">
+                    <h2 class="text-3xl font-bold mb-4 text-purple-400">${project.title}</h2>
+                    <p class="text-lg text-gray-300 mb-6">${project.description}</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-3 text-pink-400">Key Features</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            ${project.features.map(feature => `<li class="flex items-start"><span class="text-purple-400 mr-2">•</span> ${feature}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-blue-400">Technologies Used</h3>
+                        <div class="flex flex-wrap gap-2">
+                            ${project.tech.map(tech => `<span class="px-3 py-1 bg-purple-600/30 rounded-full text-sm">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('projectDetails').innerHTML = projectHTML;
+        } else {
+            document.getElementById('projectDetails').innerHTML = '<p class="text-center text-gray-400">Project not found.</p>';
+        }
+    </script>
+</body>
+</html>

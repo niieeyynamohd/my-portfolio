@@ -170,145 +170,45 @@ function setupMarqueeHoverEvents() {
     });
 }
 
-// Project details popup
-function showProjectDetails(projectType) {
-    const details = {
-        analytics: {
-            title: 'Business Analytics Dashboard',
-            description: 'A comprehensive real-time business intelligence platform featuring advanced analytics, KPI tracking, automated reporting, and interactive data visualizations. Built with modern web technologies to handle large datasets and provide actionable insights.',
-            features: ['Real-time data processing', 'Interactive charts and graphs', 'Automated report generation', 'Custom KPI tracking', 'Role-based access control', 'Export functionality'],
-            tech: ['React', 'D3.js', 'Node.js', 'PostgreSQL', 'Redis', 'Docker']
-        },
-        elearning: {
-            title: 'E-Learning Platform',
-            description: 'An interactive online learning management system with progress tracking, video courses, quizzes, and certification system. Features include student enrollment, course management, and comprehensive analytics for educators.',
-            features: ['Video course streaming', 'Progress tracking', 'Interactive quizzes', 'Certification system', 'Discussion forums', 'Mobile responsive design'],
-            tech: ['Vue.js', 'Node.js', 'MongoDB', 'Socket.io', 'AWS S3', 'Stripe API']
-        },
-        crm: {
-            title: 'Enterprise CRM System',
-            description: 'A comprehensive customer relationship management system with lead tracking, sales pipeline management, and automated workflow processes. Designed for enterprise-scale operations with advanced reporting and integration capabilities.',
-            features: ['Lead management', 'Sales pipeline tracking', 'Automated workflows', 'Email integration', 'Advanced reporting', 'Third-party integrations'],
-            tech: ['Angular', 'Spring Boot', 'MySQL', 'Apache Kafka', 'Elasticsearch', 'Docker']
-        },
-        banking: {
-            title: 'Mobile Banking App',
-            description: 'A secure mobile banking application with biometric authentication, real-time transactions, and comprehensive financial management features. Built with React Native for cross-platform compatibility.',
-            features: ['Biometric authentication', 'Real-time transactions', 'Account management', 'Bill payments', 'Investment tracking', 'Security alerts'],
-            tech: ['React Native', 'Node.js', 'MongoDB', 'JWT', 'Stripe API', 'Firebase']
-        },
-        chatbot: {
-            title: 'AI Chatbot Platform',
-            description: 'An intelligent chatbot platform powered by natural language processing and machine learning. Provides automated customer support with context-aware responses and continuous learning capabilities.',
-            features: ['Natural language processing', 'Context-aware responses', 'Multi-language support', 'Analytics dashboard', 'Integration APIs', 'Continuous learning'],
-            tech: ['Python', 'TensorFlow', 'FastAPI', 'Redis', 'PostgreSQL', 'Docker']
-        },
-        iot: {
-            title: 'IoT Smart Home System',
-            description: 'A complete IoT solution for smart home automation featuring voice control, energy monitoring, and intelligent device management. Integrates with popular smart home ecosystems.',
-            features: ['Voice control integration', 'Energy monitoring', 'Device automation', 'Mobile app control', 'Security monitoring', 'Weather integration'],
-            tech: ['Arduino', 'Raspberry Pi', 'MQTT', 'Node.js', 'React Native', 'InfluxDB']
-        }
-    };
-
-    const project = details[projectType];
-    alert(`${project.title}\n\n${project.description}\n\nKey Features:\n• ${project.features.join('\n• ')}\n\nTechnologies:\n${project.tech.join(', ')}`);
-}
-
 // Certificate details popup
 function showCertificateDetails(certType) {
     const details = {
-        aws: {
-            title: 'AWS Certified Solutions Architect - Associate',
-            description: 'Validates expertise in designing distributed systems and applications on the AWS platform. Covers compute, networking, storage, and database AWS services.',
-            skills: ['AWS Architecture Design', 'Cost Optimization', 'Security Best Practices', 'High Availability Design', 'Disaster Recovery Planning'],
-            validation: 'Certificate ID: AWS-ASA-12345 | Credly Badge Available'
+        'award': {
+            title: 'GOLD AWARD',
+            description: 'This award was presented for my final year project, "Interactive Approach to Preserve the Kadazandusun Language Through Gamification." The project involved developing an innovative application that uses gamification to help preserve a local language.',
+            issuer: 'Pertandingan Inovasi Antara Asasi Malaysia (PITRAM 2025)',
+            date: '22 - 23 February 2025'
         },
-        gcp: {
-            title: 'Google Cloud Professional Cloud Architect',
-            description: 'Demonstrates ability to design, develop, and manage robust, secure, scalable, and dynamic solutions to drive business objectives using Google Cloud Platform.',
-            skills: ['GCP Architecture', 'Kubernetes Management', 'DevOps Practices', 'Data Analytics', 'Machine Learning Integration'],
-            validation: 'Certificate ID: GCP-PCA-67890 | Google Cloud Certified Directory'
+        'elatih': {
+            title: 'Navigating Through Microsoft Power BI',
+            description: 'A certificate of completion for an online course focused on navigating and using Microsoft Power BI. This demonstrates my proficiency in data visualization and business intelligence, skills that are highly valued in data-driven roles.',
+            issuer: 'HRD Corp e-LATiH (Human Resource Development Corporation)',
+            date: '19 September 2025'
         },
-        azure: {
-            title: 'Microsoft Azure Fundamentals (AZ-900)',
-            description: 'Foundational knowledge of cloud services and how those services are provided with Microsoft Azure. Covers core Azure services, security, privacy, compliance, and trust.',
-            skills: ['Azure Core Services', 'Security and Compliance', 'Azure Pricing', 'Cloud Concepts', 'Azure Support'],
-            validation: 'Certificate ID: AZURE-900-11111 | Microsoft Learn Profile'
+        'program': {
+            title: 'Certificate of Participation: Webinar Leadership: Humanism or Humanity',
+            description: 'A certificate acknowledging participation in a leadership webinar that explored the concepts of humanism and humanity. This demonstrates engagement in personal development and a commitment to understanding leadership principles.',
+            issuer: 'UMS (Universiti Malaysia Sabah), with collaboration from the Centre for Co-Curriculum and Student Development',
+            date: '1 December 2021'
         },
-        kubernetes: {
-            title: 'Certified Kubernetes Administrator (CKA)',
-            description: 'Validates skills in managing Kubernetes clusters and containerized applications. Covers cluster architecture, workloads, services, networking, and troubleshooting.',
-            skills: ['Container Orchestration', 'Cluster Management', 'Pod Networking', 'Storage Management', 'Security Configuration'],
-            validation: 'Certificate ID: CKA-K8S-54321 | CNCF Certified Directory'
+        'diploma': {
+            title: 'Diploma In Information Technology',
+            description: 'This diploma serves as an official certification of my educational qualification at the diploma level. It represents the successful completion of a comprehensive program in Information Technology with a specialization in Digital Technology, providing a strong foundation in computing, programming, and platform technologies.',
+            issuer: 'Politeknik Kuching Sarawak',
+            date: 'January 2024'
         },
-        docker: {
-            title: 'Docker Certified Associate (DCA)',
-            description: 'Demonstrates proficiency in Docker containerization technology. Covers image creation, container management, networking, and orchestration fundamentals.',
-            skills: ['Containerization', 'Image Management', 'Container Networking', 'Volume Management', 'Docker Compose'],
-            validation: 'Certificate ID: DCA-DOC-98765 | Docker Certification Registry'
-        },
-        mongodb: {
-            title: 'MongoDB Certified Developer Associate',
-            description: 'Validates skills in developing applications with MongoDB. Covers data modeling, CRUD operations, indexing, aggregation, and performance optimization.',
-            skills: ['NoSQL Database Design', 'Data Modeling', 'Query Optimization', 'Aggregation Framework', 'Index Management'],
-            validation: 'Certificate ID: MDB-DEV-13579 | MongoDB University'
+        'cisco': {
+            title: 'Cybersecurity Essentials',
+            description: 'A certificate for completing the Cybersecurity Essentials course, which provides foundational knowledge and skills in cybersecurity. This includes understanding security principles, threats, and best practices for protecting data and networks.',
+            issuer: 'Cisco Networking Academy and UMS',
+            date: '25 January 2025'
         }
     };
 
     const cert = details[certType];
-    alert(`${cert.title}\n\n${cert.description}\n\nKey Skills:\n• ${cert.skills.join('\n• ')}\n\nValidation:\n${cert.validation}`);
-}
-
-// Experience details popup
-function showExperienceDetails(expType) {
-    const details = {
-        senior: {
-            title: 'Senior Full Stack Developer - TechCorp Solutions',
-            period: 'January 2022 - Present (2+ years)',
-            description: 'Leading development of enterprise-scale web applications serving 100,000+ users with microservices architecture and cloud infrastructure.',
-            achievements: ['Led team of 5 developers', 'Reduced system downtime by 40%', 'Implemented CI/CD pipelines', 'Mentored junior developers', 'Architected microservices infrastructure'],
-            technologies: ['React', 'Node.js', 'AWS', 'Docker', 'Kubernetes', 'MongoDB', 'PostgreSQL']
-        },
-        fullstack: {
-            title: 'Full Stack Developer - InnovateTech Inc.',
-            period: 'March 2020 - December 2021 (1 year 10 months)',
-            description: 'Developed responsive web applications using modern JavaScript frameworks and optimized application performance by 35%.',
-            achievements: ['Built 15+ web applications', 'Improved performance by 35%', 'Integrated payment gateways', 'Collaborated in Agile teams', 'Optimized database queries'],
-            technologies: ['Vue.js', 'Python', 'Django', 'PostgreSQL', 'Redis', 'AWS', 'Git']
-        },
-        intern: {
-            title: 'Software Development Intern - StartupHub Technologies',
-            period: 'June 2019 - February 2020 (9 months)',
-            description: 'Built and maintained web applications using React and Express.js, achieving 85% code coverage with comprehensive testing.',
-            achievements: ['Developed 8 web applications', 'Achieved 85% code coverage', 'Participated in Agile ceremonies', 'Fixed production issues', 'Wrote comprehensive tests'],
-            technologies: ['React', 'Express.js', 'MySQL', 'Git', 'Jest', 'HTML/CSS', 'JavaScript']
-        },
-        lead: {
-            title: 'Technical Lead - CloudTech Innovations',
-            period: 'September 2018 - February 2020 (1 year 6 months)',
-            description: 'Led cross-functional teams and architected scalable cloud solutions for Fortune 500 clients with focus on high availability and performance.',
-            achievements: ['Managed team of 8 engineers', 'Delivered 12 major projects', 'Reduced infrastructure costs by 30%', 'Implemented DevOps practices', 'Designed system architecture'],
-            technologies: ['Team Leadership', 'System Architecture', 'AWS', 'Terraform', 'Jenkins', 'Microservices', 'Agile']
-        },
-        backend: {
-            title: 'Backend Developer - DataFlow Systems',
-            period: 'January 2018 - August 2018 (8 months)',
-            description: 'Developed high-performance APIs and database systems handling millions of transactions daily with focus on scalability and reliability.',
-            achievements: ['Built APIs handling 1M+ requests/day', 'Optimized database performance by 50%', 'Implemented caching strategies', 'Designed data pipelines', 'Maintained 99.9% uptime'],
-            technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Apache Kafka', 'Docker', 'Microservices']
-        },
-        junior: {
-            title: 'Junior Developer - WebCraft Studios',
-            period: 'June 2017 - December 2017 (7 months)',
-            description: 'Started career building responsive websites and learning modern development practices in a collaborative team environment.',
-            achievements: ['Built 20+ responsive websites', 'Learned modern web technologies', 'Collaborated with design team', 'Implemented client feedback', 'Maintained code quality'],
-            technologies: ['HTML/CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'PHP', 'MySQL', 'Git']
-        }
-    };
-
-    const exp = details[expType];
-    alert(`${exp.title}\n${exp.period}\n\n${exp.description}\n\nKey Achievements:\n• ${exp.achievements.join('\n• ')}\n\nTechnologies Used:\n${exp.technologies.join(', ')}`);
+    if (cert) {
+        alert(`${cert.title}\n\n${cert.description}\n\nIssued by: ${cert.issuer}\nDate: ${cert.date}`);
+    }
 }
 
 // Section switching functionality
@@ -333,15 +233,13 @@ function showSection(sectionType) {
     const projectsGrid = document.getElementById('projectsGrid');
     const certificatesMarqueeContainer = document.getElementById('certificatesMarqueeContainer');
     const certificatesGrid = document.getElementById('certificatesGrid');
-    const experienceMarqueeContainer = document.querySelector('.marquee-container');
-    const experienceGrid = document.getElementById('experienceGrid');
+    const experienceMarqueeContainer = document.querySelector('#experienceSection .marquee-container');
     
     if (projectsMarqueeContainer) projectsMarqueeContainer.style.display = 'none';
     if (projectsGrid) projectsGrid.style.display = 'none';
     if (certificatesMarqueeContainer) certificatesMarqueeContainer.style.display = 'none';
     if (certificatesGrid) certificatesGrid.style.display = 'none';
     if (experienceMarqueeContainer) experienceMarqueeContainer.style.display = 'none';
-    if (experienceGrid) experienceGrid.style.display = 'none';
 
     // Reset all button styles to inactive state
     document.getElementById('projectsBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all text-gray-400';
@@ -461,14 +359,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event delegation for project cards
     document.addEventListener('click', function(e) {
         // Find the closest project card
-        let card = e.target.closest('.marquee-item');
-        if (card && card.dataset.projectType) {
-            showProjectDetails(card.dataset.projectType);
+        let projectCard = e.target.closest('.marquee-item[data-project-id]');
+        if (projectCard) {
+            const projectId = projectCard.dataset.projectId;
+            window.location.href = `project.html?type=${projectId}`;
+            return;
+        }
+        
+        // Find the closest experience card
+        let experienceCard = e.target.closest('.marquee-item[data-experience-id]');
+        if (experienceCard) {
+            const experienceId = experienceCard.dataset.experienceId;
+            window.location.href = `experience.html?type=${experienceId}`;
+            return;
         }
         
         // Find the closest certificate card
-        let certCard = e.target.closest('.marquee-item');
-        if (certCard && certCard.dataset.certificateType) {
+        let certCard = e.target.closest('.marquee-item[data-certificate-type]');
+        if (certCard) {
             showCertificateDetails(certCard.dataset.certificateType);
         }
     });
