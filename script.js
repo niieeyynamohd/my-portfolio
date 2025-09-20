@@ -381,3 +381,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Check for hash in URL when page loads to show appropriate section
+window.addEventListener('load', function() {
+    const hash = window.location.hash.substring(1); // Get the hash without the #
+    
+    if (hash === 'experience') {
+        // Show experience section if hash is #experience
+        showSection('experience');
+    }
+    
+    // You can add similar checks for other sections if needed
+    if (hash === 'projects') {
+        showSection('projects');
+    }
+    
+    if (hash === 'certificates') {
+        showSection('certificates');
+    }
+});
