@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanina Portfolio</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-purple-500/20">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold flex items-center">
+                    <span class="text-blue-400 animate-pulse" style="animation-duration: 2s;">N</span>
+                    <span class="text-purple-400 animate-pulse" style="animation-duration: 2s; animation-delay: 0.5s;">M</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-purple-400 transition-colors">Portfolio</a>
+                    <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+                </div>
+                <button class="mobile-menu-button md:hidden text-gray-300 hover:text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Sidebar -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="text-xl font-bold text-purple-400">Menu</div>
+            <div class="mobile-menu-close" id="mobile-menu-close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+        </div>
+        <div class="mobile-menu-nav">
+            <a href="#home" class="mobile-menu-link">Home</a>
+            <a href="#about" class="mobile-menu-link">About</a>
+            <a href="#skills" class="mobile-menu-link">Skills</a>
+            <a href="#projects" class="mobile-menu-link">Portfolio</a>
+            <a href="#contact" class="mobile-menu-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen galaxy-bg flex items-center justify-center relative">
+        <!-- Stars Layer -->
+        <div class="stars"></div>
+
+        <!-- Nebula Clouds -->
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="nebula nebula-3"></div>
+
+        <!-- Shooting Stars -->
+        <div class="shooting-star" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="shooting-star" style="top: 40%; left: 60%; animation-delay: 2s;"></div>
+        <div class="shooting-star" style="top: 70%; left: 20%; animation-delay: 4s;"></div>
+
+        <div class="text-center z-10 px-6 relative">
+            <div class="fade-in" style="animation-delay: 0.2s;">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
+                    Hi, I'm <span class="typing bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent" id="nameText">Amanina</span>
+                </h1>
+            </div>
+
+            <div class="fade-in" style="animation-delay: 0.4s;">
+                <p class="text-xl md:text-2xl mb-8 text-gray-200 drop-shadow-lg">
+                    💻 I love building systems that solve real problems, <br>
+                    🔍 exploring new technologies, and 🌍 creating impact through tech.
+                </p>
+            </div>
+            
+            <div class="fade-in" style="animation-delay: 0.6s;">
+                <button onclick="scrollToSection('projects')" class="bg-gradient-to-r from-purple-600/30 to-pink-600/30 backdrop-blur-md px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-600/50 hover:to-pink-600/50 transition-all glow border border-purple-400/30">
+                    View My Work ✨
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Cosmic Elements -->
+        <div class="absolute top-20 left-10 float-animation" style="animation-delay: 0s;">
+            <div class="w-20 h-20 bg-purple-500/20 rounded-full blur-xl border border-purple-400/20"></div>
+        </div>
+
+        <div class="absolute bottom-20 right-10 float-animation" style="animation-delay: 2s;">
+            <div class="w-32 h-32 bg-pink-500/20 rounded-full blur-xl border border-pink-400/20"></div>
+        </div>
+
+        <div class="absolute top-1/2 left-1/4 float-animation" style="animation-delay: 4s;">
+            <div class="w-16 h-16 bg-blue-500/20 rounded-full blur-xl border border-blue-400/20"></div>
+        </div>
+
+        <!-- Additional Cosmic Particles -->
+        <div class="absolute top-10 right-20 w-2 h-2 bg-white rounded-full animate-pulse"></div>
+        <div class="absolute top-40 left-1/3 w-1 h-1 bg-purple-300 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 right-1/3 w-1 h-1 bg-pink-300 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-60 right-1/4 w-2 h-2 bg-blue-300 rounded-full animate-pulse" style="animation-delay: 3s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900 relative overflow-hidden">
+        <!-- Subtle star background -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="stars" style="animation-duration: 40s;"></div>
+        </div>
+
+        <!-- Floating Star Clusters -->
+        <div class="star-cluster" style="top: 15%; left: 10%; animation-delay: 0s;"></div>
+        <div class="star-cluster star-cluster-2" style="top: 35%; right: 15%; animation-delay: 3s;"></div>
+        <div class="star-cluster star-cluster-3" style="top: 55%; left: 20%; animation-delay: 6s;"></div>
+        <div class="star-cluster" style="top: 75%; right: 25%; animation-delay: 9s;"></div>
+        <div class="star-cluster star-cluster-2" style="top: 25%; left: 60%; animation-delay: 12s;"></div>
+        <div class="star-cluster star-cluster-3" style="top: 65%; right: 40%; animation-delay: 15s;"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="slide-up">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse hover:scale-105 transition-transform duration-300" style="animation: rainbowGlow 3s ease-in-out infinite;">
+                    About Me ✨
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="slide-up" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <!-- Professional Portrait Container -->
+                        <div class="w-80 h-80 rounded-full mx-auto relative overflow-hidden shadow-2xl border-4 border-purple-400/30 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600">
+                            <!-- Galaxy Animation Background -->
+                            <div class="absolute inset-0 galaxy-swirl"></div>
+
+                            <!-- Professional Portrait Image -->
+                            <img src="image/profile.png" alt="Professional portrait of a confident woman developer" class="w-full h-full object-cover relative z-10" onerror="this.src=''; this.alt='Professional portrait - Image failed to load'; this.style.display='none';">
+
+                            <!-- Overlay gradient for better integration -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-pink-600/20 z-20"></div>
+                        </div>
+
+                        <!-- Orbital rings with enhanced glow -->
+                        <div class="absolute inset-0 border-2 border-purple-400/30 rounded-full w-96 h-96 mx-auto animate-spin shadow-lg shadow-purple-500/20" style="animation-duration: 20s;"></div>
+                        <div class="absolute inset-0 border border-pink-400/25 rounded-full w-[420px] h-[420px] mx-auto animate-spin shadow-lg shadow-pink-500/15" style="animation-duration: 30s; animation-direction: reverse;"></div>
+                        <div class="absolute inset-0 border border-blue-400/20 rounded-full w-[460px] h-[460px] mx-auto animate-spin shadow-lg shadow-blue-500/10" style="animation-duration: 40s;"></div>
+
+                        <!-- Cosmic Particles Layer -->
+                        <div class="cosmic-particles">
+                            <div class="particle bg-purple-400" style="top: 15%; left: 20%; animation-delay: 0s;"></div>
+                            <div class="particle bg-pink-400" style="top: 25%; right: 15%; animation-delay: 1s;"></div>
+                            <div class="particle bg-blue-400" style="bottom: 20%; left: 25%; animation-delay: 2s;"></div>
+                            <div class="particle bg-cyan-400" style="bottom: 15%; right: 20%; animation-delay: 0.5s;"></div>
+                            <div class="particle bg-yellow-400" style="top: 40%; left: 10%; animation-delay: 3s;"></div>
+                            <div class="particle bg-green-400" style="top: 60%; right: 10%; animation-delay: 1.5s;"></div>
+                            <div class="particle bg-indigo-400" style="bottom: 40%; left: 15%; animation-delay: 2.5s;"></div>
+                            <div class="particle bg-rose-400" style="bottom: 30%; right: 25%; animation-delay: 4s;"></div>
+                        </div>
+
+                        <!-- Enhanced floating elements -->
+                        <div class="absolute top-8 left-8 w-3 h-3 bg-purple-400/60 rounded-full animate-pulse shadow-lg shadow-purple-500/40" style="animation-delay: 0s;"></div>
+                        <div class="absolute top-16 right-12 w-2 h-2 bg-pink-400/60 rounded-full animate-pulse shadow-lg shadow-pink-500/40" style="animation-delay: 1s;"></div>
+                        <div class="absolute bottom-12 left-16 w-2.5 h-2.5 bg-blue-400/60 rounded-full animate-pulse shadow-lg shadow-blue-500/40" style="animation-delay: 2s;"></div>
+                        <div class="absolute bottom-8 right-8 w-1.5 h-1.5 bg-cyan-400/60 rounded-full animate-pulse shadow-lg shadow-cyan-500/40" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute top-32 left-6 w-1 h-1 bg-yellow-400/80 rounded-full animate-pulse shadow-lg shadow-yellow-500/60" style="animation-delay: 3s;"></div>
+                        <div class="absolute top-48 right-6 w-1 h-1 bg-green-400/80 rounded-full animate-pulse shadow-lg shadow-green-500/60" style="animation-delay: 1.5s;"></div>
+                    </div>
+                </div>
+                <div class="slide-up" style="animation-delay: 0.4s;">
+                    <div class="intro">  
+                        <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                            I'm a Software Engineering graduate, a Software Developer and an aspiring Full Stack Developer who enjoys building systems and application that solve real-world problems. During my studies and internship, I gained hands-on experience in web and mobile development, working with APIs, databases, and exploring creative solutions. I also enjoy multimedia and video editing, where I volunteered to create presentation videos.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <!-- Colorful Skills Text -->
+                        <div class="text-center mb-6 text-lg">
+                            <span class="text-purple-500 font-bold">Creative</span>
+                            <span class="text-gray-400 mx-3">|</span>
+                            <span class="text-pink-500 font-bold mx-1">Innovative</span>
+                            <span class="text-gray-400 mx-3">|</span>
+                            <span class="text-cyan-500 font-bold">Problem Solving</span>
+                            <span class="text-gray-400 mx-3">|</span>
+                            <span class="text-blue-500 font-bold mx-1">Teamwork</span>
+                            <span class="text-gray-400 mx-3">|</span>
+                            <span class="text-emerald-500 font-bold">Positive Attitude</span>
+                            <span class="text-gray-400 mx-3">|</span>
+                            <span class="text-teal-500 font-bold mx-1">Responsibility</span>
+                            <span class="text-gray-400 mx-3">|</span>
+                            <span class="text-orange-500 font-bold">Continuous Learning</span>
+                            <span class="text-gray-400 mx-3">|</span>
+                            <span class="text-red-500 font-bold mx-1">Active Listening</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800 relative overflow-hidden">
+        <!-- Cosmic background elements -->
+        <div class="absolute top-10 left-10 w-32 h-32 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-40 h-40 bg-pink-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-blue-600/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="slide-up">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 via-green-400 to-yellow-400 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300" style="animation: skillsGlow 2.5s ease-in-out infinite;">
+                    Technical Skills ⚡
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="slide-up" style="animation-delay: 0.2s;">
+                    <div class="bg-gray-900/80 backdrop-blur-md p-8 rounded-2xl card-hover border border-purple-500/20 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-pink-600/5"></div>
+                        <h3 class="text-2xl font-semibold mb-8 text-purple-400 relative z-10 text-center">Frontend 🌟</h3>
+
+                        <div class="grid grid-cols-3 gap-6">
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-2xl font-bold text-black hover:scale-110 transition-transform label-bounce" style="animation-delay: 0s;">
+                                    🅱️
+                                </div>
+                                <span class="text-sm text-gray-300">Bootstrap</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-400 to-green-900 rounded-xl flex items-center justify-center text-2xl font-bold text-white hover:scale-110 transition-transform label-pulse" style="animation-delay: 0.3s;">
+                                    ⚡
+                                </div>
+                                <span class="text-sm text-gray-300">JavaScript (ES6+)</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-wiggle" style="animation-delay: 0.6s;">
+                                    ⚛️
+                                </div>
+                                <span class="text-sm text-gray-300">React</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-float" style="animation-delay: 0.9s;">
+                                    🎨
+                                </div>
+                                <span class="text-sm text-gray-300">CSS</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-glow" style="animation-delay: 1.2s;">
+                                    🌐
+                                </div>
+                                <span class="text-sm text-gray-300">HTML5</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-yellow-400 to-red-500 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-bounce" style="animation-delay: 1.5s;">
+                                    🌊
+                                </div>
+                                <span class="text-sm text-gray-300">Tailwind</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-yellow-400 to-green-500 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-bounce" style="animation-delay: 1.5s;">
+                                    🧩
+                                </div>
+                                <span class="text-sm text-gray-300">AngularJS</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-400 to-red-500 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-bounce" style="animation-delay: 1.5s;">
+                                    ⚙️ 
+                                </div>
+                                <span class="text-sm text-gray-300">Java</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-red-500 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-bounce" style="animation-delay: 1.5s;">
+                                    📄     
+                                </div>
+                                <span class="text-sm text-gray-300">XML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-up" style="animation-delay: 0.4s;">
+                    <div class="bg-gray-900/80 backdrop-blur-md p-8 rounded-2xl card-hover border border-pink-500/20 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-600/5 via-transparent to-blue-600/5"></div>
+                        <h3 class="text-2xl font-semibold mb-8 text-pink-400 relative z-10 text-center">Backend 🚀</h3>
+                        <div class="grid grid-cols-3 gap-6">
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-pulse" style="animation-delay: 0.2s;">
+                                    📦
+                                </div>
+                                <span class="text-sm text-gray-300">Node.js</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-400 to-yellow-500 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-wiggle" style="animation-delay: 0.5s;">
+                                    🐍
+                                </div>
+                                <span class="text-sm text-gray-300">Python</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-float" style="animation-delay: 0.8s;">
+                                    🗄️
+                                </div>
+                                <span class="text-sm text-gray-300">MySQL</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-bounce" style="animation-delay: 1.1s;">
+                                    🔥
+                                </div>
+                                <span class="text-sm text-gray-300">Firebase</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-glow" style="animation-delay: 1.4s;">
+                                    🐘            
+                                </div>
+                                <span class="text-sm text-gray-300">PHP</span>
+                            </div>
+
+                            <div class="skill-icon-item text-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl flex items-center justify-center text-2xl hover:scale-110 transition-transform label-pulse" style="animation-delay: 1.7s;">
+                                    💠
+                                </div>
+                                <span class="text-sm text-gray-300">Kotlin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900 relative overflow-hidden">
+        <!-- Cosmic background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="stars" style="animation-duration: 60s;"></div>
+        </div>
+        <div class="absolute top-20 right-20 w-48 h-48 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-20 w-56 h-56 bg-pink-600/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="slide-up">
+                <h2 class="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300" style="animation: projectsGlow 4s ease-in-out infinite;">
+                    Portfolio Showcase 🌌
+                </h2>
+            </div>
+
+            <!-- Section Control Buttons (Updated Design) -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-gray-800/80 backdrop-blur-md rounded-full p-2 border border-purple-500/20">
+                    <button onclick="showSection('projects')" id="projectsBtn" class="px-6 py-3 rounded-full font-semibold transition-all border-2 border-purple-400 text-purple-400">
+                        🚀 Projects
+                    </button>
+                    <button onclick="showSection('certificates')" id="certificatesBtn" class="px-6 py-3 rounded-full font-semibold transition-all text-gray-400">
+                        🏆 Certificates
+                    </button>
+                    <button onclick="showSection('experience')" id="experienceBtn" class="px-6 py-3 rounded-full font-semibold transition-all text-gray-400">
+                        💼 Experience
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="mb-16" id="projectsSection">
+                <h3 class="text-2xl font-semibold mb-8 text-center text-purple-400">🚀 Featured Projects</h3>
+                
+                <!-- Project Filter Buttons -->
+                <div class="flex justify-center mb-8 flex-wrap">
+                    <button class="filter-btn active" data-category="all" onclick="filterProjects('all')">
+                        <strong>ALL</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                   
+                    <button class="filter-btn" data-category="web" onclick="filterProjects('web')">
+                        <strong>WEB</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                    <button class="filter-btn" data-category="mobile" onclick="filterProjects('mobile')">
+                        <strong>MOBILE</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                     <button class="filter-btn" data-category="iot" onclick="filterProjects('iot')">
+                        <strong>IoT</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                    <button class="filter-btn" data-category="other" onclick="filterProjects('other')">
+                        <strong>OTHER</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                </div>
+                
+                <!-- Projects Marquee -->
+                <div class="marquee-container" id="projectsMarqueeContainer">
+                    <div class="marquee-content projects-marquee" id="projectsMarquee">
+                        <div class="marquee-item" data-category="web" data-project-type="analytics">
+                            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-300 shadow-md card-hover cursor-pointer">
+                                <div class="relative mx-4 -mt-6 h-48 overflow-hidden rounded-xl shadow-lg">
+                                    <img src="image/project 1.png" alt="Student Clearance System" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Analytics Dashboard - Image failed to load'; this.style.display='none';">
+                                </div>
+
+                                <div class="p-6">
+                                    <h5 class="mb-3 block font-sans text-xl font-semibold leading-snug tracking-normal text-purple-400 antialiased">
+                                        Student Clearance System
+                                    </h5>
+                                    <p class="block font-sans text-sm font-light leading-relaxed text-gray-300 antialiased mb-4">
+                                        Student Clearance system is a web-based application that streamlines the clearance process for students, allowing them to easily obtain necessary approvals and complete required tasks before graduation.
+                                    </p>
+                                    <div class="text-xs mb-4 text-center">
+                                        <span class="text-cyan-400 font-medium border-b-2 border-cyan-400">HTML</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-orange-400 font-medium border-b-2 border-orange-400">CSS</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-blue-400 font-medium border-b-2 border-blue-400">JSON / API</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-blue-400 font-medium border-b-2 border-blue-400">AppWizard</span>
+                                    </div>
+                                    <button type="button" class="rounded-lg bg-purple-500 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marquee-item" data-category="web" data-project-type="elearning">
+                            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-300 shadow-md card-hover cursor-pointer">
+                                <div class="relative mx-4 -mt-6 h-48 overflow-hidden rounded-xl shadow-lg">
+                                    <img src="image/project 2.png" alt="Staff Exit Clearance System" class="w-full h-full object-cover" onerror="this.src=''; this.alt='E-Learning Platform - Image failed to load'; this.style.display='none';">
+                                </div>
+
+                                <div class="p-6">
+                                    <h5 class="mb-3 block font-sans text-xl font-semibold leading-snug tracking-normal text-pink-400 antialiased">
+                                        Staff Exit Clearance System
+                                    </h5>
+                                    <p class="block font-sans text-sm font-light leading-relaxed text-gray-300 antialiased mb-4">
+                                        Staff Exit Clearance System is a web-based application that simplifies the exit clearance process for employees, ensuring a smooth transition when they leave the organization.
+                                    </p>
+
+                                    <div class="text-xs mb-4 text-center">
+                                        <span class="text-green-400 font-medium border-b-2 border-green-400">HTML</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-emerald-400 font-medium border-b-2 border-emerald-400">CSS</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-green-400 font-medium border-b-2 border-green-400">API / JSON</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-green-400 font-medium border-b-2 border-green-400">AppWizard</span>
+                                    </div>
+
+                                    <button type="button" class="rounded-lg bg-pink-500 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marquee-item" data-category="web" data-project-type="crm">
+                            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-300 shadow-md card-hover cursor-pointer">
+                                <div class="relative mx-4 -mt-6 h-48 overflow-hidden rounded-xl shadow-lg">
+                                    <img src="image/report.png" alt="Printable reposrt of staff appraisal" class="w-full h-full object-cover" onerror="this.src=''; this.alt='appraisal System - Image failed to load'; this.style.display='none';">
+                                </div>
+
+                                <div class="p-6">
+                                    <h5 class="mb-3 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-400 antialiased">
+                                        Custom Screen Printable Report Appraisal.
+                                    </h5>
+                                    <p class="block font-sans text-sm font-light leading-relaxed text-gray-300 antialiased mb-4">
+                                        Custom Screen display report appraisal and printable report for staff performance evaluations.
+                                    </p>
+                                    <div class="text-xs mb-4 text-center">
+                                        <span class="text-red-400 font-medium border-b-2 border-red-400">JSON / API</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-green-400 font-medium border-b-2 border-green-400">HTML</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-blue-400 font-medium border-b-2 border-blue-400">CSS</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-red-400 font-medium border-b-2 border-red-400">AppWizard</span>
+                                    </div>
+                                    <button type="button" class="rounded-lg bg-blue-500 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Banking App -->
+                        <div class="marquee-item" data-category="mobile" data-project-type="banking">
+                            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-300 shadow-md card-hover cursor-pointer">
+                                <div class="relative mx-4 -mt-6 h-48 overflow-hidden rounded-xl shadow-lg">
+                                    <img src="image/project.png" alt="Gamification of Kadazan Dusun Language Learning" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Mobile App - Image failed to load'; this.style.display='none';">
+                                </div>
+                                <div class="p-6">
+                                    <h5 class="mb-3 block font-sans text-xl font-semibold leading-snug tracking-normal text-green-400 antialiased">
+                                        Lingozan : Gamification of Kadazan Dusun Language Learning Mobile App
+                                    </h5>
+                                    <p class="block font-sans text-sm font-light leading-relaxed text-gray-300 antialiased mb-4">
+                                        Lingozan is a mobile app that gamifies the learning of the Kadazan Dusun language through interactive lessons, quizzes, and game to make language acquisition fun and engaging.
+                                    </p>
+                                    <div class="text-xs mb-4 text-center">
+                                        <span class="text-blue-400 font-medium border-b-2 border-blue-400">Kotlin</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-emerald-400 font-medium border-b-2 border-emerald-400">Java</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-teal-400 font-medium border-b-2 border-teal-400">FireBase</span>
+                                    </div>
+                                    <button type="button" class="rounded-lg bg-green-500 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Chatbot Platform -->
+                        <div class="marquee-item" data-category="iot" data-project-type="chatbot">
+                            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-300 shadow-md card-hover cursor-pointer">
+                                <div class="relative mx-4 -mt-6 h-48 overflow-hidden rounded-xl shadow-lg">
+                                    <img src="image/iot.png" alt="IOT project Smart Room" class="w-full h-full object-cover" onerror="this.src=''; this.alt='AI Chatbot Platform - Image failed to load'; this.style.display='none';">
+                                </div>
+                                <div class="p-6">
+                                    <h5 class="mb-3 block font-sans text-xl font-semibold leading-snug tracking-normal text-yellow-400 antialiased">
+                                        IOT Project Cisco: Smart Study Room
+                                    </h5>
+                                    <p class="block font-sans text-sm font-light leading-relaxed text-gray-300 antialiased mb-4">
+                                        Cisco IOT project that creates a smart study room environment using sensors and automation to enhance comfort and productivity.
+                                    </p>
+                                    <div class="text-xs mb-4 text-center">
+                                        <span class="text-yellow-400 font-medium border-b-2 border-yellow-400">Netacad</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-orange-400 font-medium border-b-2 border-orange-400">Cisco</span>
+                                    </div>
+                                    <button type="button" class="rounded-lg bg-yellow-500 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-yellow-500/20 transition-all hover:shadow-lg hover:shadow-yellow-500/40">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marquee-item" data-category="other" data-project-type="iot">
+                            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-300 shadow-md card-hover cursor-pointer">
+                                <div class="relative mx-4 -mt-6 h-48 overflow-hidden rounded-xl shadow-lg">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Typing game interface with colorful graphics" class="w-full h-full object-cover" onerror="this.src=''; this.alt='IoT Smart Home System - Image failed to load'; this.style.display='none';">
+                                </div>
+                                <div class="p-6">
+                                    <h5 class="mb-3 block font-sans text-xl font-semibold leading-snug tracking-normal text-indigo-400 antialiased">
+                                        Typing Game Web Application
+                                    </h5>
+                                    <p class="block font-sans text-sm font-light leading-relaxed text-gray-300 antialiased mb-4">
+                                        A fun and interactive web application that helps users improve their typing skills through various games and challenges.
+                                    </p>
+                                    <div class="text-xs mb-4 text-center">
+                                        <span class="text-teal-400 font-medium border-b-2 border-teal-400">HTML</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-red-400 font-medium border-b-2 border-red-400">CSS</span>
+                                        <span class="text-gray-400 mx-2">|</span>
+                                        <span class="text-purple-400 font-medium border-b-2 border-purple-400">JavaScript</span>
+                                    </div>
+                                    <button type="button" class="rounded-lg bg-indigo-500 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-indigo-500/20 transition-all hover:shadow-lg hover:shadow-indigo-500/40">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projects Grid (Hidden by default) -->
+                <div id="projectsGrid" class="hidden"></div>
+            </div>
+
+            <!-- Certificates Section -->
+            <div class="mb-16 hidden" id="certificatesSection">
+                <h3 class="text-2xl font-semibold mb-8 text-center text-orange-400">🏆 Certifications, Achievements & Involvements</h3>
+                
+                <!-- Certificate Filter Buttons -->
+                <div class="flex justify-center mb-8 flex-wrap">
+                    <button class="filter-btn active" data-category="all" onclick="filterCertificates('all')">
+                        <strong>ALL</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                    <button class="filter-btn" data-category="achievement" onclick="filterCertificates('achievement')">
+                        <strong>ACHIEVEMENT</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                    <button class="filter-btn" data-category="professional" onclick="filterCertificates('professional')">
+                        <strong>PROFESSIONAL</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                    <button class="filter-btn" data-category="involvement" onclick="filterCertificates('involvement')">
+                        <strong>INVOLVEMENT</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                </div>
+                
+               
+                <div class="marquee-container" id="certificatesMarqueeContainer">
+                    <div class="marquee-content certificates-marquee" id="certificatesMarquee">
+                     
+                      <div class="marquee-item" data-category="achievement" data-certificate-type="award">
+                            <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('award')">
+                                 <img src="image/award.JPG" class="certificate-card_image" alt="award">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">GOLD AWARD</p>
+                                    <p class="certificate-card__issuer">Pertandingan Inovasi Antara Asasi Malaysia (PITRAM 2025)</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">22 - 23 February 2025</p>
+  
+                                    </div>
+                                    <p class="certificate-card__description"> This award was presented for your final year project, "Interactive Approach to Preserve the Kadazandusun Language Through Gamification." The project involved developing an innovative application that uses gamification to help preserve a local language. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marquee-item" data-category="professional" data-certificate-type="elatih">
+                                <div class="certificate-card certificate-card--rose" onclick="showCertificateDetails('elatih')">
+                                    <img src="image/learn.png" class="certificate-card_image" alt="elatih1">
+                                    <div class="certificate-card__content">
+                                        <p class="certificate-card__title">Program No Body-Shaming, Respect Each Other</p>
+                                        <p class="certificate-card__issuer">Universiti Malaysia Sabah</p>
+                                        <div class="certificate-card__details">
+                                            <p class="certificate-card__date">21 May 2022</p>
+                                        </div>
+                                        <p class="certificate-card__description">A certificate of participation for a program aimed at promoting body positivity and mutual respect.</p>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="marquee-item" data-category="professional" data-certificate-type="elatih">
+                                <div class="certificate-card certificate-card--indigo" onclick="showCertificateDetails('elatih')">
+                                    <img src="image/learn1.png" class="certificate-card_image" alt="elatih2">
+                                    <div class="certificate-card__content">
+                                        <p class="certificate-card__title">Cybersecurity Essentials</p>
+                                        <p class="certificate-card__issuer">Cisco Networking Academy and UMS</p>
+                                        <div class="certificate-card__details">
+                                            <p class="certificate-card__date">25 January 2025</p>
+                                        </div>
+                                        <p class="certificate-card__description">A certificate for completing the Cybersecurity Essentials course, which provides foundational knowledge in cybersecurity.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                            <div class="certificate-card certificate-card--cyan" onclick="showCertificateDetails('program')">
+                               <img src="image/program.png" class="certificate-card_image" alt="program">   
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Certificate of Participation: Webinar Leadership: Humanism or Humanity</p>
+                                    <p class="certificate-card__issuer">UMS (Universiti Malaysia Sabah), with collaboration from the Centre for Co-Curriculum and Student Development</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">1 December 2021</p>
+                                    </div>
+                                    <p class="certificate-card__description">A certificate acknowledging participation in a leadership webinar that explored the concepts of humanism and humanity. This demonstrates engagement in personal development and a commitment to understanding leadership principles.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                            <div class="certificate-card certificate-card--teal" onclick="showCertificateDetails('program')">
+                                 <img src="image/program1.png" class="certificate-card_image" alt="program1"> 
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Program No Body-Shaming, Respect Each Other</p>
+                                    <p class="certificate-card__issuer">Universiti Malaysia Sabah, through the Centre for Co-Curriculum and Student Development</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">21 May 2022</p>
+                                    </div>
+                                    <p class="certificate-card__description"> A certificate of participation for a program aimed at promoting body positivity and mutual respect, demonstrating an engagement with social and personal development topics.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                            <div class="certificate-card certificate-card--yellow" onclick="showCertificateDetails('program')">
+                                <img src="image/program2.png" class="certificate-card_image" alt="program2">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Forum Pelaburan 1.0 (Investment Forum 1.0)</p>
+                                    <p class="certificate-card__issuer"> Universiti Malaysia Sabah, organized by the Economics and Entrepreneurship EXCO of the Masjid's Friends Club</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">28 June 2022</p>
+                                    </div>
+                                    <p class="certificate-card__description">A certificate for successful participation in an investment forum, showcasing an interest in finance and entrepreneurship beyond your core studies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                            <div class="certificate-card certificate-card--indigo" onclick="showCertificateDetails('program')">
+                                <img src="image/program4.png" class="certificate-card_image" alt="program4">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title"> Program Now You Can Hear Me</p>
+                                    <p class="certificate-card__issuer">Universiti Malaysia Sabah, through the Centre for Co-Curriculum and Student Development</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">21 May 2022</p>
+                                    </div>
+                                    <p class="certificate-card__description">A certificate for participation in a program designed to enhance communication and soft skills. This demonstrates proactive effort in personal and professional development.</p>
+                                </div>
+                            </div>
+                         </div>
+
+                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                            <div class="certificate-card certificate-card--lime" onclick="showCertificateDetails('program')">
+                                <img src="image/program5.png" class="certificate-card_image" alt="program5">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Program Tips Dekan Mahasiswa (Student Dean's Tips Program)</p>
+                                    <p class="certificate-card__issuer">PEMBINA UMS (National Muslim Youth Association UMS)</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">10 October 2021</p>
+                                    </div>
+                                    <p class="certificate-card__description">A certificate for attending a program that likely provided valuable guidance and tips from the Dean's office, focusing on academic and personal success.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="marquee-item" data-category="professional" data-certificate-type="program">
+                            <div class="certificate-card certificate-card--red" onclick="showCertificateDetails('program')">
+                                 <img src="image/sulam.png" class="certificate-card_image" alt="programajk"> 
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Sulam Program:Guardians of Digital Realm: Ensuring Safety & Security in Cyber Age </p>
+                                    <p class="certificate-card__issuer"> Universiti Malaysia Sabah, Faculty of Computing and Informatics</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">28 June 2024</p>
+                                    </div>
+                                    <p class="certificate-card__description"> This certificate of appreciation is for my role as a facilitator and program committee member for a SULAM (Service Learning Malaysia) program. As part of a collaboration between the university and the public community, I contributed to a cybersecurity initiative, demonstrating my ability to lead, organize, and share technical knowledge.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="marquee-item" data-category="professional" data-certificate-type="diploma">
+                            <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('diploma')">
+                                 <img src="image/diploma.png" class="certificate-card_image" alt="diploma">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Diploma In Information Technology</p>
+                                    <p class="certificate-card__issuer">Politeknik Kuching Sarawak</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">January 2024</p>
+                                    </div>
+                                    <p class="certificate-card__description">This diploma serves as an official certification of my educational qualification at the diploma level. It represents the successful completion of a comprehensive program in Information Technology with a specialization in Digital Technology, providing a strong foundation in computing, programming, and platform technologies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marquee-item" data-category="professional" data-certificate-type="cisco">
+                            <div class="certificate-card certificate-card--purple" onclick="showCertificateDetails('cisco')">
+                               <img src="image/cybersecurity.png" class="certificate-card_image" alt="cybersecurity"> 
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Cybersecurity Essentials </p>
+                                    <p class="certificate-card__issuer">Cisco Networking Academy and UMS</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">25 January 2025</p>
+                                    </div>
+                                    <p class="certificate-card__description"> A certificate for completing the Cybersecurity Essentials course, which provides foundational knowledge and skills in cybersecurity. This includes understanding security principles, threats, and best practices for protecting data and networks.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                            <div class="certificate-card certificate-card--pink" onclick="showCertificateDetails('program')">
+                                <img src="image/program3.png" class="certificate-card_image" alt="program3">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Symposium on Coping Strategy Covid-19 Pandemic 2.0</p>
+                                    <p class="certificate-card__issuer">Universiti Malaysia Sabah</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">17 - 18 June 2022</p>
+                                    </div>
+                                    <p class="certificate-card__description">A certificate of participation for an international-level symposium that provided insights into coping strategies during the Covid-19 pandemic. This highlights an interest in and awareness of global issues.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificates Grid (Hidden by default) -->
+                <div id="certificatesGrid" class="hidden"></div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="mb-16 hidden" id="experienceSection">
+                <h3 class="text-2xl font-semibold mb-8 text-center text-indigo-400">💼 Work Experience</h3>
+                <div class="marquee-container">
+                    <div class="marquee-content experience-marquee" id="experienceMarquee">
+                        <!-- Senior Full Stack Developer -->
+                        <div class="marquee-item">
+                            <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 relative h-96 flex flex-col cursor-pointer hover:border-purple-400/40 transition-all" onclick="showExperienceDetails('senior')">
+                                <div class="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-pink-600/5"></div>
+                                <div class="p-6 flex-1 flex flex-col relative z-10">
+                                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl">
+                                        💼
+                                    </div>
+                                    <h3 class="text-lg font-semibold mb-2 text-purple-400 text-center">Senior Full Stack Developer</h3>
+                                    <p class="text-gray-300 text-sm mb-2 text-center">TechCorp Solutions</p>
+                                    <p class="text-gray-400 text-xs mb-3 text-center">Jan 2022 - Present (2+ years)</p>
+                                    <p class="text-gray-300 text-sm text-center flex-1">Led enterprise-scale applications serving 100K+ users with microservices architecture.</p>
+                                    <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                        <span class="px-2 py-1 bg-purple-600 text-white rounded-full text-xs font-medium">React</span>
+                                        <span class="px-2 py-1 bg-pink-600 text-white rounded-full text-xs font-medium">Node.js</span>
+                                        <span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">AWS</span>
+                                    </div>
+                                    <p class="text-purple-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Full Stack Developer -->
+                        <div class="marquee-item">
+                            <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-blue-500/20 relative h-96 flex flex-col cursor-pointer hover:border-blue-400/40 transition-all" onclick="showExperienceDetails('fullstack')">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-cyan-600/5"></div>
+                                <div class="p-6 flex-1 flex flex-col relative z-10">
+                                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-2xl">
+                                        🚀
+                                    </div>
+                                    <h3 class="text-lg font-semibold mb-2 text-blue-400 text-center">Full Stack Developer</h3>
+                                    <p class="text-gray-300 text-sm mb-2 text-center">InnovateTech Inc.</p>
+                                    <p class="text-gray-400 text-xs mb-3 text-center">Mar 2020 - Dec 2021 (1 year 10 months)</p>
+                                    <p class="text-gray-300 text-sm text-center flex-1">Developed responsive web applications and optimized performance by 35%.</p>
+                                    <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                        <span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">Vue.js</span>
+                                        <span class="px-2 py-1 bg-cyan-600 text-white rounded-full text-xs font-medium">Python</span>
+                                        <span class="px-2 py-1 bg-green-600 text-white rounded-full text-xs font-medium">Django</span>
+                                    </div>
+                                    <p class="text-blue-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Software Development Intern -->
+                        <div class="marquee-item">
+                            <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-green-500/20 relative h-96 flex flex-col cursor-pointer hover:border-green-400/40 transition-all" onclick="showExperienceDetails('intern')">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-teal-600/5"></div>
+                                <div class="p-6 flex-1 flex flex-col relative z-10">
+                                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-2xl">
+                                        🌱
+                                    </div>
+                                    <h3 class="text-lg font-semibold mb-2 text-green-400 text-center">Software Development Intern</h3>
+                                    <p class="text-gray-300 text-sm mb-2 text-center">StartupHub Technologies</p>
+                                    <p class="text-gray-400 text-xs mb-3 text-center">Jun 2019 - Feb 2020 (9 months)</p>
+                                    <p class="text-gray-300 text-sm text-center flex-1">Built web applications with React and achieved 85% code coverage with testing.</p>
+                                    <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                        <span class="px-2 py-1 bg-green-600 text-white rounded-full text-xs font-medium">React</span>
+                                        <span class="px-2 py-1 bg-teal-600 text-white rounded-full text-xs font-medium">Express.js</span>
+                                        <span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">MySQL</span>
+                                    </div>
+                                    <p class="text-green-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Lead -->
+                        <div class="marquee-item">
+                            <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-yellow-500/20 relative h-96 flex flex-col cursor-pointer hover:border-yellow-400/40 transition-all" onclick="showExperienceDetails('lead')">
+                                <div class="absolute inset-0 bg-gradient-to-br from-yellow-600/5 via-transparent to-orange-600/5"></div>
+                                <div class="p-6 flex-1 flex flex-col relative z-10">
+                                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl">
+                                        👑
+                                    </div>
+                                    <h3 class="text-lg font-semibold mb-2 text-yellow-400 text-center">Technical Lead</h3>
+                                    <p class="text-gray-300 text-sm mb-2 text-center">CloudTech Innovations</p>
+                                    <p class="text-gray-400 text-xs mb-3 text-center">Sep 2018 - Feb 2020 (1 year 6 months)</p>
+                                    <p class="text-gray-300 text-sm text-center flex-1">Led cross-functional teams and architected scalable cloud solutions for Fortune 500 clients.</p>
+                                    <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                        <span class="px-2 py-1 bg-yellow-600 text-white rounded-full text-xs font-medium">Team Leadership</span>
+                                        <span class="px-2 py-1 bg-orange-600 text-white rounded-full text-xs font-medium">AWS</span>
+                                        <span class="px-2 py-1 bg-red-600 text-white rounded-full text-xs font-medium">Terraform</span>
+                                    </div>
+                                    <p class="text-yellow-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backend Developer -->
+                        <div class="marquee-item">
+                            <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-red-500/20 relative h-96 flex flex-col cursor-pointer hover:border-red-400/40 transition-all" onclick="showExperienceDetails('backend')">
+                                <div class="absolute inset-0 bg-gradient-to-br from-red-600/5 via-transparent to-pink-600/5"></div>
+                                <div class="p-6 flex-1 flex flex-col relative z-10">
+                                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl">
+                                        ⚡
+                                    </div>
+                                    <h3 class="text-lg font-semibold mb-2 text-red-400 text-center">Backend Developer</h3>
+                                    <p class="text-gray-300 text-sm mb-2 text-center">DataFlow Systems</p>
+                                    <p class="text-gray-400 text-xs mb-3 text-center">Jan 2018 - Aug 2018 (8 months)</p>
+                                    <p class="text-gray-300 text-sm text-center flex-1">Developed high-performance APIs and database systems handling millions of transactions daily.</p>
+                                    <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                        <span class="px-2 py-1 bg-red-600 text-white rounded-full text-xs font-medium">Java</span>
+                                        <span class="px-2 py-1 bg-pink-600 text-white rounded-full text-xs font-medium">Spring Boot</span>
+                                        <span class="px-2 py-1 bg-purple-600 text-white rounded-full text-xs font-medium">PostgreSQL</span>
+                                    </div>
+                                    <p class="text-red-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Junior Developer -->
+                        <div class="marquee-item">
+                            <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-teal-500/20 relative h-96 flex flex-col cursor-pointer hover:border-teal-400/40 transition-all" onclick="showExperienceDetails('junior')">
+                                <div class="absolute inset-0 bg-gradient-to-br from-teal-600/5 via-transparent to-cyan-600/5"></div>
+                                <div class="p-6 flex-1 flex flex-col relative z-10">
+                                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center text-2xl">
+                                        🌟
+                                    </div>
+                                    <h3 class="text-lg font-semibold mb-2 text-teal-400 text-center">Junior Developer</h3>
+                                    <p class="text-gray-300 text-sm mb-2 text-center">WebCraft Studios</p>
+                                    <p class="text-gray-400 text-xs mb-3 text-center">Jun 2017 - Dec 2017 (7 months)</p>
+                                    <p class="text-gray-300 text-sm text-center flex-1">Started career building responsive websites and learning modern development practices.</p>
+                                    <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                        <span class="px-2 py-1 bg-teal-600 text-white rounded-full text-xs font-medium">HTML/CSS</span>
+                                        <span class="px-2 py-1 bg-cyan-600 text-white rounded-full text-xs font-medium">JavaScript</span>
+                                        <span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">PHP</span>
+                                    </div>
+                                    <p class="text-teal-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800 relative overflow-hidden">
+        <!-- Cosmic background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="stars" style="animation-duration: 50s;"></div>
+        </div>
+        <div class="absolute top-10 left-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-48 h-48 bg-pink-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="slide-up">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-400 via-purple-400 to-teal-400 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300" style="animation: contactGlow 3.5s ease-in-out infinite;">
+                    Get In Touch 🌠
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="slide-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-semibold mb-6 text-purple-400">Let's Connect</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-600/30 rounded-full flex items-center justify-center">
+                                📧
+                            </div>
+                            <span class="text-gray-300">neynaamohd@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-pink-600/30 rounded-full flex items-center justify-center">
+                                💼
+                            </div>
+                            <span class="text-gray-300">www.linkedin.com/in/amanina-majdiah</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-600/30 rounded-full flex items-center justify-center">
+                                🐙
+                            </div>
+                            <span class="text-gray-300">github.com/niieeyynamohd</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-up" style="animation-delay: 0.4s;">
+                    <div class="bg-gray-900/80 backdrop-blur-md p-8 rounded-2xl border border-purple-500/20 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-pink-600/5"></div>
+                        <form class="space-y-6 relative z-10" onsubmit="handleSubmit(event)">
+                            <div>
+                                <input type="text" placeholder="Your Name ✨" required class="w-full px-4 py-3 bg-gray-800/80 backdrop-blur-md border border-purple-500/30 rounded-lg focus:border-purple-400 focus:outline-none transition-all glow-input">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Your Email 📧" required class="w-full px-4 py-3 bg-gray-800/80 backdrop-blur-md border border-purple-500/30 rounded-lg focus:border-purple-400 focus:outline-none transition-all glow-input">
+                            </div>
+                            <div>
+                                <textarea placeholder="Your Message 💫" rows="5" required class="w-full px-4 py-3 bg-gray-800/80 backdrop-blur-md border border-purple-500/30 rounded-lg focus:border-purple-400 focus:outline-none transition-all resize-none glow-input"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 py-3 rounded-lg font-semibold hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 transition-all glow border border-purple-400/30">
+                                Send Message 🚀
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-800 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">© 2025 Amanina Majdiah Mohamad Portfolio.</p>
+        </div>
+    </footer>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c7cc3805d126f2',t:'MTc1NzQzMjU3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <script src="script.js"></script>
+</body>
+</html>
