@@ -268,6 +268,14 @@ function showSection(sectionType) {
         const expMarquee = document.querySelector('#experienceSection .marquee-container');
         if (expMarquee) expMarquee.style.display = 'block';
     }
+    
+    // Scroll to the projects section after showing the selected tab
+    const projectsElement = document.getElementById('projects');
+    if (projectsElement) {
+        setTimeout(() => {
+            projectsElement.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+    }
 }
 
 // Project filter functionality
@@ -348,13 +356,33 @@ function filterCertificates(category) {
     }
 }
 
+// Handle hash navigation for sections
+function handleHashNavigation() {
+    const hash = window.location.hash;
+    
+    if (hash === '#experience-section') {
+        // Show the projects section first
+        showSection('projects');
+        
+        // Then switch to the experience tab
+        setTimeout(() => {
+            showSection('experience');
+        }, 100);
+    }
+}
+
 // Initialize marquee functionality when page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Setup marquee hover events
     setupMarqueeHoverEvents();
 
-    // Show projects section by default
-    showSection('projects');
+    // Handle hash navigation
+    handleHashNavigation();
+
+    // Show projects section by default (if no hash)
+    if (!window.location.hash) {
+        showSection('projects');
+    }
 
     // Add event delegation for project cards
     document.addEventListener('click', function(e) {
@@ -380,22 +408,4 @@ document.addEventListener('DOMContentLoaded', function() {
             showCertificateDetails(certCard.dataset.certificateType);
         }
     });
-});
-// Check for hash in URL when page loads to show appropriate section
-window.addEventListener('load', function() {
-    const hash = window.location.hash.substring(1); // Get the hash without the #
-    
-    if (hash === 'experience') {
-        // Show experience section if hash is #experience
-        showSection('experience');
-    }
-    
-    // You can add similar checks for other sections if needed
-    if (hash === 'projects') {
-        showSection('projects');
-    }
-    
-    if (hash === 'certificates') {
-        showSection('certificates');
-    }
 });
