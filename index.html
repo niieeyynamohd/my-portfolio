@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amanina Portfolio</title>
-   <link href="./output.css" rel="stylesheet">
-
+    <link href="./output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white overflow-x-hidden">
     <!-- Navigation -->
@@ -358,18 +357,20 @@
             </div>
 
             <!-- Section Control Buttons (Updated Design) -->
-            <div class="flex justify-center mb-12">
-                <div class="bg-gray-800/80 backdrop-blur-md rounded-full p-2 border border-purple-500/20">
-                    <button onclick="showSection('projects')" id="projectsBtn" class="px-6 py-3 rounded-full font-semibold transition-all border-2 border-purple-400 text-purple-400">
+            <div class="flex justify-center mb-12 flex-wrap">
+                <div class="bg-gray-100/80 backdrop-blur-md flex justify-center items-center"></div>
+                    <button onclick="showSection('projects')" id="projectsBtn" class="section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-purple-400 text-purple-400">
                         🚀 Projects
                     </button>
-                    <button onclick="showSection('certificates')" id="certificatesBtn" class="px-6 py-3 rounded-full font-semibold transition-all text-gray-400">
+                    <button onclick="showSection('certificates')" id="certificatesBtn" class="section-control-btn px-6 py-3 rounded-full font-semibold transition-all text-gray-400">
                         🏆 Certificates
                     </button>
-                    <button onclick="showSection('experience')" id="experienceBtn" class="px-6 py-3 rounded-full font-semibold transition-all text-gray-400">
+                    <button onclick="showSection('experience')" id="experienceBtn" class="section-control-btn px-6 py-3 rounded-full font-semibold transition-all text-gray-400">
                         💼 Experience
                     </button>
                 </div>
+
+                
             </div>
 
             <!-- Projects Section -->
@@ -1040,7 +1041,7 @@
                 </div>
 
                 <div class="slide-up" style="animation-delay: 0.4s;">
-                    <div class="bg-gray-900/80 backdrop-blur-md p-8 rounded-2xl border border-purple-500/20 relative overflow-hidden">
+                    <div class="bg-gray-900/80 backdrop-blur-md p-8 rounded-2xl border border-purple-500/20 relative overflow-hidden contact-form">
                         <div class="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-pink-600/5"></div>
                         <form class="space-y-6 relative z-10" onsubmit="handleSubmit(event)">
                             <div>
@@ -1068,7 +1069,7 @@
             <p class="text-gray-400">© 2025 Amanina Majdiah Mohamad Portfolio.</p>
         </div>
     </footer>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c7cc3805d126f2',t:'MTc1NzQzMjU3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
     <script src="script.js"></script>
 </body>
 </html>
