@@ -337,12 +337,6 @@ function showSection(sectionType) {
     } else if (sectionType === 'experience') {
         document.getElementById('experienceSection').classList.remove('hidden');
         document.getElementById('experienceBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-indigo-400 text-indigo-400';
-        
-        // Make sure certificates are completely hidden
-        const certificatesMarqueeContainer = document.getElementById('certificatesMarqueeContainer');
-        const certificatesGrid = document.getElementById('certificatesGrid');
-        if (certificatesMarqueeContainer) certificatesMarqueeContainer.style.display = 'none';
-        if (certificatesGrid) certificatesGrid.style.display = 'none';
     }
 }
 
@@ -396,10 +390,6 @@ function filterCertificates(category) {
     
     // Clear containers
     gridContainer.innerHTML = '';
-    
-    // Make sure containers are visible
-    marqueeContainer.style.display = '';
-    gridContainer.style.display = '';
     
     if (category === 'all') {
         // Show marquee and hide grid
