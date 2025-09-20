@@ -268,14 +268,6 @@ function showSection(sectionType) {
         const expMarquee = document.querySelector('#experienceSection .marquee-container');
         if (expMarquee) expMarquee.style.display = 'block';
     }
-    
-    // Scroll to the projects section after showing the selected tab
-    const projectsElement = document.getElementById('projects');
-    if (projectsElement) {
-        setTimeout(() => {
-            projectsElement.scrollIntoView({ behavior: 'smooth' });
-        }, 150);
-    }
 }
 
 // Project filter functionality
@@ -356,31 +348,22 @@ function filterCertificates(category) {
     }
 }
 
-// Handle hash navigation for sections
-function handleHashNavigation() {
-    const hash = window.location.hash;
-    
-    if (hash === '#experience-section') {
-        // Show the projects section first
-        showSection('projects');
-        
-        // Then switch to the experience tab
-        setTimeout(() => {
-            showSection('experience');
-        }, 100);
-    }
-}
-
 // Initialize marquee functionality when page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Setup marquee hover events
     setupMarqueeHoverEvents();
 
-    // Handle hash navigation
-    handleHashNavigation();
-
-    // Show projects section by default (if no hash)
-    if (!window.location.hash) {
+    // Check for hash in URL to determine which section to show
+    const hash = window.location.hash;
+    if (hash === '#experience') {
+        // Show experience section if hash is #experience
+        showSection('experience');
+        // Scroll to experience section after a short delay to ensure it's rendered
+        setTimeout(() => {
+            document.getElementById('experienceSection').scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    } else {
+        // Show projects section by default
         showSection('projects');
     }
 
