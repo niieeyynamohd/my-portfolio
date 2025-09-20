@@ -313,10 +313,35 @@ function showExperienceDetails(expType) {
 
 // Section switching functionality
 function showSection(sectionType) {
+    // Get all sections
+    const projectsSection = document.getElementById('projectsSection');
+    const certificatesSection = document.getElementById('certificatesSection');
+    const experienceSection = document.getElementById('experienceSection');
+    
     // Hide all sections
-    document.getElementById('projectsSection').classList.add('hidden');
-    document.getElementById('certificatesSection').classList.add('hidden');
-    document.getElementById('experienceSection').classList.add('hidden');
+    projectsSection.classList.add('hidden');
+    certificatesSection.classList.add('hidden');
+    experienceSection.classList.add('hidden');
+    
+    // Also set display: none to ensure they're hidden
+    projectsSection.style.display = 'none';
+    certificatesSection.style.display = 'none';
+    experienceSection.style.display = 'none';
+    
+    // Hide all marquee containers and grids
+    const projectsMarqueeContainer = document.getElementById('projectsMarqueeContainer');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const certificatesMarqueeContainer = document.getElementById('certificatesMarqueeContainer');
+    const certificatesGrid = document.getElementById('certificatesGrid');
+    const experienceMarqueeContainer = document.querySelector('.marquee-container');
+    const experienceGrid = document.getElementById('experienceGrid');
+    
+    if (projectsMarqueeContainer) projectsMarqueeContainer.style.display = 'none';
+    if (projectsGrid) projectsGrid.style.display = 'none';
+    if (certificatesMarqueeContainer) certificatesMarqueeContainer.style.display = 'none';
+    if (certificatesGrid) certificatesGrid.style.display = 'none';
+    if (experienceMarqueeContainer) experienceMarqueeContainer.style.display = 'none';
+    if (experienceGrid) experienceGrid.style.display = 'none';
 
     // Reset all button styles to inactive state
     document.getElementById('projectsBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all text-gray-400';
@@ -325,18 +350,25 @@ function showSection(sectionType) {
 
     // Show selected section and activate button
     if (sectionType === 'projects') {
-        document.getElementById('projectsSection').classList.remove('hidden');
+        projectsSection.classList.remove('hidden');
+        projectsSection.style.display = 'block';
         document.getElementById('projectsBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-purple-400 text-purple-400';
         // Reset project filters to show all projects
         filterProjects('all');
     } else if (sectionType === 'certificates') {
-        document.getElementById('certificatesSection').classList.remove('hidden');
+        certificatesSection.classList.remove('hidden');
+        certificatesSection.style.display = 'block';
         document.getElementById('certificatesBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-orange-400 text-orange-400';
         // Reset certificate filters to show all certificates
         filterCertificates('all');
     } else if (sectionType === 'experience') {
-        document.getElementById('experienceSection').classList.remove('hidden');
+        experienceSection.classList.remove('hidden');
+        experienceSection.style.display = 'block';
         document.getElementById('experienceBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-indigo-400 text-indigo-400';
+        
+        // Show experience marquee
+        const expMarquee = document.querySelector('#experienceSection .marquee-container');
+        if (expMarquee) expMarquee.style.display = 'block';
     }
 }
 
@@ -359,11 +391,15 @@ function filterProjects(category) {
     if (category === 'all') {
         // Show marquee and hide grid
         marqueeContainer.classList.remove('hidden');
+        marqueeContainer.style.display = 'block';
         gridContainer.classList.add('hidden');
+        gridContainer.style.display = 'none';
     } else {
         // Hide marquee and show grid
         marqueeContainer.classList.add('hidden');
+        marqueeContainer.style.display = 'none';
         gridContainer.classList.remove('hidden');
+        gridContainer.style.display = 'grid';
         
         // Filter and add items to grid
         allItems.forEach(item => {
@@ -394,11 +430,15 @@ function filterCertificates(category) {
     if (category === 'all') {
         // Show marquee and hide grid
         marqueeContainer.classList.remove('hidden');
+        marqueeContainer.style.display = 'block';
         gridContainer.classList.add('hidden');
+        gridContainer.style.display = 'none';
     } else {
         // Hide marquee and show grid
         marqueeContainer.classList.add('hidden');
+        marqueeContainer.style.display = 'none';
         gridContainer.classList.remove('hidden');
+        gridContainer.style.display = 'grid';
         
         // Filter and add items to grid
         allItems.forEach(item => {

@@ -659,7 +659,7 @@
 }
 
 .certificates-marquee {
-    animation: marqueeScroll 40s linear infinite;
+    animation: marqueeScroll 30s linear infinite;
 }
 
 .experience-marquee {
@@ -704,6 +704,12 @@
     fill: #f97316;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 4px 8px rgba(249, 115, 22, 0.3));
+}
+
+.certificate-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.4);
+    border-color: rgba(249, 115, 22, 0.6);
 }
 
 .certificate-card__content {
@@ -1409,6 +1415,13 @@
     }
 }
 
+.bg-gray-800\/80.backdrop-blur-md.rounded-full.p-2.border.border-purple-500\/20 {
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        border: none !important;
+    }
+
+
 @media (max-width: 480px) {
     /* Extra small screen styles */
     .hero h1 {
@@ -1435,9 +1448,9 @@
         font-size: 0.7rem;
     }
 }
-
 .bg-gray-800\/80.backdrop-blur-md.rounded-full.p-2.border.border-purple-500\/20 {
         background-color: transparent !important;
         backdrop-filter: none !important;
         border: none !important;
     }
+
