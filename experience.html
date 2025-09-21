@@ -8,8 +8,10 @@
   <style>
     /* Add custom CSS to ensure proper spacing */
     body {
-      padding-top: 100px; /* Height of the navigation bar */
+      padding-top: 100px;
+      text-align: justify;
     }
+    
   </style>
 </head>
 <body class="bg-gray-900 text-white overflow-x-hidden">
@@ -57,90 +59,29 @@
         title: 'IT Internship',
         company: 'Sarawak Skills Kuching Sarawak',
         period: '17 March 2025 - 29 August 2025',
-        description: 'Gained hands-on experience in IT support, system administration, and software development. Assisted in maintaining network infrastructure and developing internal tools to improve workflow efficiency.',
+        description: 'Completed an internship with the Information Technology Unit, assisting in the design, coding, testing, and analysis of software applications. Responsibilities included researching and documenting software specifications, debugging, and providing progress reports throughout the development lifecycle.',
         achievements: [
-          'Developed 3 internal tools for workflow automation',
-          'Reduced system downtime by 25% through proactive maintenance',
-          'Assisted in network infrastructure upgrade project',
-          'Provided technical support to 50+ staff members',
-          'Documented IT processes and procedures'
+          'Gained hands-on experience with Bootstrap and Angular, applying modern front-end development techniques.',
+          'Successfully developed and deployed three web-based applications.',
+          'Enhanced problem-solving and debugging skills by analyzing and resolving software errors.',
+          'Improved teamwork, time management, and adaptability during organization events and collaborative projects.'
         ],
-        technologies: ['Network Administration', 'System Support', 'Python', 'HTML/CSS', 'Database Management'],
+        technologies: ['AppWizard', 'System Support', 'JSON / API', 'HTML/CSS', 'Bootstrap', 'Angular'],
         image: './image/recap.gif'
       },
-      'fullstack': {
-        title: 'Full Stack Developer',
-        company: 'InnovateTech Inc.',
-        period: 'Mar 2020 - Dec 2021 (1 year 10 months)',
-        description: 'Developed responsive web applications and optimized performance by 35%. Worked on both frontend and backend components, implementing features from database design to user interface.',
-        achievements: [
-          'Built 15+ web applications for various clients',
-          'Improved application performance by 35%',
-          'Implemented secure payment processing systems',
-          'Led a team of 3 junior developers',
-          'Reduced bug reports by 40% through code optimization'
-        ],
-        technologies: ['Vue.js', 'Python', 'Django', 'PostgreSQL', 'Redis', 'AWS', 'Git'],
-        image: 'https://via.placeholder.com/500x350'
-      },
+      
       'intern': {
-        title: 'Software Development Intern',
-        company: 'StartupHub Technologies',
-        period: 'Jun 2019 - Feb 2020 (9 months)',
-        description: 'Built and maintained web applications using React and Express.js, achieving 85% code coverage with comprehensive testing. Participated in agile development processes and learned best practices.',
+        title: 'Diploma Internship – IT Support',
+        company: 'Centre for Technology Excellence Sarawak Sdn. Bhd. (CENTEXS)',
+        period: '9 December 2019 – 17 March 2020',
+        description: 'Interned as IT Support within the HR and Admin Unit, assisting in both technical and administrative tasks. Responsibilities included troubleshooting hardware/software issues, supporting HR systems, and maintaining office IT equipment. Additionally involved in preparing reports, handling HR and administrative documents, and assisting in asset management.',
         achievements: [
-          'Developed 8 web applications',
-          'Achieved 85% code coverage with testing',
+          'Assisted in preparing HR reports and official documents, improving documentation accuracy.',
+          'Contributed to asset tracking and management, ensuring proper record-keeping.',
           'Participated in daily stand-ups and sprint planning',
-          'Fixed 100+ production issues',
-          'Wrote comprehensive technical documentation'
+          'Strengthened multitasking, teamwork, and communication skills by bridging technical and administrative support roles.'
         ],
-        technologies: ['React', 'Express.js', 'MySQL', 'Git', 'Jest', 'HTML/CSS', 'JavaScript'],
-        image: 'https://via.placeholder.com/500x350'
-      },
-      'lead': {
-        title: 'Technical Lead',
-        company: 'CloudTech Innovations',
-        period: 'Sep 2018 - Feb 2020 (1 year 6 months)',
-        description: 'Led cross-functional teams and architected scalable cloud solutions for Fortune 500 clients with focus on high availability and performance. Managed project timelines and technical direction.',
-        achievements: [
-          'Managed team of 8 engineers',
-          'Delivered 12 major projects on time',
-          'Reduced infrastructure costs by 30%',
-          'Implemented DevOps practices',
-          'Designed system architecture for high-traffic applications'
-        ],
-        technologies: ['Team Leadership', 'System Architecture', 'AWS', 'Terraform', 'Jenkins', 'Microservices', 'Agile'],
-        image: 'https://via.placeholder.com/500x350'
-      },
-      'backend': {
-        title: 'Backend Developer',
-        company: 'DataFlow Systems',
-        period: 'Jan 2018 - Aug 2018 (8 months)',
-        description: 'Developed high-performance APIs and database systems handling millions of transactions daily with focus on scalability and reliability. Optimized database queries for better performance.',
-        achievements: [
-          'Built APIs handling 1M+ requests/day',
-          'Optimized database performance by 50%',
-          'Implemented caching strategies',
-          'Designed data pipelines for analytics',
-          'Maintained 99.9% uptime'
-        ],
-        technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Apache Kafka', 'Docker', 'Microservices'],
-        image: 'https://via.placeholder.com/500x350'
-      },
-      'junior': {
-        title: 'Junior Developer',
-        company: 'WebCraft Studios',
-        period: 'Jun 2017 - Dec 2017 (7 months)',
-        description: 'Started career building responsive websites and learning modern development practices in a collaborative team environment. Gained experience in full-stack development.',
-        achievements: [
-          'Built 20+ responsive websites',
-          'Learned modern web technologies',
-          'Collaborated with design team',
-          'Implemented client feedback',
-          'Maintained code quality standards'
-        ],
-        technologies: ['HTML/CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'PHP', 'MySQL', 'Git'],
+        technologies: ['Microsoft Office', 'Troubleshooting', 'Report Preparation', 'Asset Management'],
         image: 'https://via.placeholder.com/500x350'
       }
     };
@@ -161,7 +102,7 @@
           <h2 class="text-3xl font-bold mb-2 text-purple-400">${experience.title}</h2>
           <p class="text-lg text-pink-400 mb-1">${experience.company}</p>
           <p class="text-md text-blue-400 mb-6">${experience.period}</p>
-          <p class="text-lg text-gray-300 mb-6">${experience.description}</p>
+          <p class="text-lg text-gray-300 mb-6 ">${experience.description}</p>
           
           <div class="mb-8">
             <h3 class="text-xl font-semibold mb-3 text-blue-400">Key Achievements</h3>
