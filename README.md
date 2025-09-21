@@ -1,3 +1,6 @@
+## 🌐 Live Demo
+[View Portfolio](https://niieeyynamohd.github.io/my-portfolio/)
+
 # My Portfolio Website
 
 This is my personal portfolio website showcasing my projects, skills, and experiences.
@@ -19,5 +22,4 @@ This is my personal portfolio website showcasing my projects, skills, and experi
 - `script.js` → Portfolio interactivity
 - `images/` → Image assets
 
-## 🌐 Live Demo
-[View Portfolio](https://niieeyynamohd.github.io/my-portfolio/)
+
