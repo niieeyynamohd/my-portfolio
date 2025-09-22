@@ -857,59 +857,54 @@
             </div>
 
             <!-- Experience Section -->
-            <div class="mb-16 hidden" id="experienceSection">
-                <h3 class="text-2xl font-semibold mb-8 text-center text-indigo-400">💼 Work Experience</h3>
-                <div class="marquee-container">
-                    <div class="marquee-content experience-marquee" id="experienceMarquee">
-                      
-                       <!-- IT Internship -->
-                    <div class="marquee-item" data-experience-id="internship">
-                        <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 relative h-96 flex flex-col cursor-pointer hover:border-purple-400/40 transition-all">
-                            <div class="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-pink-600/5"></div>
-                            <div class="p-6 flex-1 flex flex-col relative z-10">
-                                <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl">
-                                    💼
-                                </div>
-                                <h3 class="text-lg font-semibold mb-2 text-purple-400 text-center">IT Internship</h3>
-                                <p class="text-gray-300 text-sm mb-2 text-center">Sarawak Skills Kuching Sarawak</p>
-                                <p class="text-gray-400 text-xs mb-3 text-center">17 March 2025 - 29 August 2025</p>
-                                <p class="text-gray-300 text-sm text-center flex-1">Gained hands-on experience in IT support, system administration, and software development.</p>
-                                <div class="flex flex-wrap gap-2 justify-center mb-4">
-                                    <span class="px-2 py-1 bg-purple-600 text-white rounded-full text-xs font-medium">Network Admin</span>
-                                    <span class="px-2 py-1 bg-pink-600 text-white rounded-full text-xs font-medium">System Support</span>
-                                    <span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">Python</span>
-                                </div>
-                                <p class="text-purple-400/70 text-xs text-center mt-2">Click card for details ✨</p>
-                            </div>
+<div class="mb-16 hidden" id="experienceSection">
+    <h3 class="text-2xl font-semibold mb-8 text-center text-indigo-400">💼 Work Experience</h3>
+    <div class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+            <!-- IT Internship -->
+            <div class="experience-card fade-up-card" data-experience-id="internship">
+                <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 relative h-96 flex flex-col cursor-pointer hover:border-purple-400/40 transition-all">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-pink-600/5"></div>
+                    <div class="p-6 flex-1 flex flex-col relative z-10">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl">
+                            💼
                         </div>
-                    </div>
-
-
-                    <!-- It Support Intern -->
-                    <div class="marquee-item" data-experience-id="intern">
-                        <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-green-500/20 relative h-96 flex flex-col cursor-pointer hover:border-green-400/40 transition-all">
-                            <div class="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-teal-600/5"></div>
-                            <div class="p-6 flex-1 flex flex-col relative z-10">
-                                <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-2xl">
-                                    🌱
-                                </div>
-                                <h3 class="text-lg font-semibold mb-2 text-green-400 text-center">IT Support Intern</h3>
-                                <p class="text-gray-300 text-sm mb-2 text-center">CENTRE FOR TECHNOLOGY EXCELLENCE SARAWAK SDN. BHD.</p>
-                                <p class="text-gray-400 text-xs mb-3 text-center">9 December 2019 - 17 March 2020</p>
-                                <p class="text-gray-300 text-sm text-center flex-1">Assisted the HR and Admin Unit with IT support, troubleshooting systems, preparing reports, handling documents, and managing assets.</p>
-                                <div class="flex flex-wrap gap-2 justify-center mb-4">
-                                    <span class="px-2 py-1 bg-green-600 text-white rounded-full text-xs font-medium">Microsoft Office </span>
-                                
-                                </div>
-                                <p class="text-green-400/70 text-xs text-center mt-2">Click card for details ✨</p>
-                            </div>
+                        <h3 class="text-lg font-semibold mb-2 text-purple-400 text-center">IT Internship</h3>
+                        <p class="text-gray-300 text-sm mb-2 text-center">Sarawak Skills Kuching Sarawak</p>
+                        <p class="text-gray-400 text-xs mb-3 text-center">17 March 2025 - 29 August 2025</p>
+                        <p class="text-gray-300 text-sm text-center flex-1">Gained hands-on experience in IT support, system administration, and software development.</p>
+                        <div class="flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="px-2 py-1 bg-purple-600 text-white rounded-full text-xs font-medium">Network Admin</span>
+                            <span class="px-2 py-1 bg-pink-600 text-white rounded-full text-xs font-medium">System Support</span>
+                            <span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">Python</span>
                         </div>
-                    </div>
-
-                    
+                        <p class="text-purple-400/70 text-xs text-center mt-2">Click card for details ✨</p>
                     </div>
                 </div>
             </div>
+
+            <!-- It Support Intern -->
+            <div class="experience-card fade-up-card" data-experience-id="intern">
+                <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-green-500/20 relative h-96 flex flex-col cursor-pointer hover:border-green-400/40 transition-all">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-teal-600/5"></div>
+                    <div class="p-6 flex-1 flex flex-col relative z-10">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-2xl">
+                            🌱
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-green-400 text-center">IT Support Intern</h3>
+                        <p class="text-gray-300 text-sm mb-2 text-center">CENTRE FOR TECHNOLOGY EXCELLENCE SARAWAK SDN. BHD.</p>
+                        <p class="text-gray-400 text-xs mb-3 text-center">9 December 2019 - 17 March 2020</p>
+                        <p class="text-gray-300 text-sm text-center flex-1">Assisted the HR and Admin Unit with IT support, troubleshooting systems, preparing reports, handling documents, and managing assets.</p>
+                        <div class="flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="px-2 py-1 bg-green-600 text-white rounded-full text-xs font-medium">Microsoft Office</span>
+                        </div>
+                        <p class="text-green-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </section>
 
