@@ -857,54 +857,107 @@
             </div>
 
             <!-- Experience Section -->
+<!-- Experience Section -->
 <div class="mb-16 hidden" id="experienceSection">
-    <h3 class="text-2xl font-semibold mb-8 text-center text-indigo-400">💼 Work Experience</h3>
+    <h3 class="text-2xl font-semibold mb-8 text-center text-blue-400">💼 Professional Experience</h3>
+    
+    <!-- Experience Filter Buttons -->
+    <div class="flex justify-center mb-8 flex-wrap">
+        <button class="filter-btn active" data-category="all" onclick="filterExperiences('all')">
+            <strong>ALL</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+        <button class="filter-btn" data-category="internship" onclick="filterExperiences('internship')">
+            <strong>INTERNSHIP</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+        <button class="filter-btn" data-category="volunteer" onclick="filterExperiences('volunteer')">
+            <strong>VOLUNTEER</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+    </div>
+    
+    <!-- Experience Cards Container (Centered) -->
     <div class="flex justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-            <!-- IT Internship -->
-            <div class="experience-card fade-up-card" data-experience-id="internship">
-                <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 relative h-96 flex flex-col cursor-pointer hover:border-purple-400/40 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-pink-600/5"></div>
-                    <div class="p-6 flex-1 flex flex-col relative z-10">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl">
-                            💼
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl" id="experienceGrid">
+            <!-- Internship Experience Card -->
+            <div class="experience-card" data-category="internship" onclick="showExperienceDetails('internship')">
+                <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.1s;">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center mr-4">
+                                <span class="text-xl">💼</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-purple-400">IT Internship</h4>
+                                <p class="text-pink-400">Sarawak Skills Kuching Sarawak</p>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-semibold mb-2 text-purple-400 text-center">IT Internship</h3>
-                        <p class="text-gray-300 text-sm mb-2 text-center">Sarawak Skills Kuching Sarawak</p>
-                        <p class="text-gray-400 text-xs mb-3 text-center">17 March 2025 - 29 August 2025</p>
-                        <p class="text-gray-300 text-sm text-center flex-1">Gained hands-on experience in IT support, system administration, and software development.</p>
-                        <div class="flex flex-wrap gap-2 justify-center mb-4">
-                            <span class="px-2 py-1 bg-purple-600 text-white rounded-full text-xs font-medium">Network Admin</span>
-                            <span class="px-2 py-1 bg-pink-600 text-white rounded-full text-xs font-medium">System Support</span>
-                            <span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">Python</span>
+                        <p class="text-blue-400 mb-4">17 March 2025 - 29 August 2025</p>
+                        <p class="text-gray-300 mb-4">Assisted in the design, coding, testing, and analysis of software applications.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">AppWizard</span>
+                            <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">Bootstrap</span>
+                            <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">Angular</span>
+                            <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">+3</span>
                         </div>
-                        <p class="text-purple-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                        <button class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            View Details <span class="ml-2">→</span>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- It Support Intern -->
-            <div class="experience-card fade-up-card" data-experience-id="intern">
-                <div class="card-hover bg-gray-800/80 backdrop-blur-md rounded-2xl border border-green-500/20 relative h-96 flex flex-col cursor-pointer hover:border-green-400/40 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-600/5 via-transparent to-teal-600/5"></div>
-                    <div class="p-6 flex-1 flex flex-col relative z-10">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-2xl">
-                            🌱
+            <!-- Diploma Internship Experience Card -->
+            <div class="experience-card" data-category="internship" onclick="showExperienceDetails('intern')">
+                <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.3s;">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-pink-600/20 flex items-center justify-center mr-4">
+                                <span class="text-xl">🖥️</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-pink-400">Diploma Internship – IT Support</h4>
+                                <p class="text-blue-400">CENTEXS Sarawak</p>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-semibold mb-2 text-green-400 text-center">IT Support Intern</h3>
-                        <p class="text-gray-300 text-sm mb-2 text-center">CENTRE FOR TECHNOLOGY EXCELLENCE SARAWAK SDN. BHD.</p>
-                        <p class="text-gray-400 text-xs mb-3 text-center">9 December 2019 - 17 March 2020</p>
-                        <p class="text-gray-300 text-sm text-center flex-1">Assisted the HR and Admin Unit with IT support, troubleshooting systems, preparing reports, handling documents, and managing assets.</p>
-                        <div class="flex flex-wrap gap-2 justify-center mb-4">
-                            <span class="px-2 py-1 bg-green-600 text-white rounded-full text-xs font-medium">Microsoft Office</span>
+                        <p class="text-green-400 mb-4">9 December 2019 – 17 March 2020</p>
+                        <p class="text-gray-300 mb-4">IT Support within the HR and Admin Unit, assisting in both technical and administrative tasks.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Microsoft Office</span>
+                            <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Troubleshooting</span>
+                            <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">+2</span>
                         </div>
-                        <p class="text-green-400/70 text-xs text-center mt-2">Click card for details ✨</p>
+                        <button class="text-pink-400 hover:text-pink-300 font-medium flex items-center">
+                            View Details <span class="ml-2">→</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

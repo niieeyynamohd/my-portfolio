@@ -1,3 +1,4 @@
+
 function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({
         behavior: 'smooth'
@@ -155,6 +156,19 @@ function setupMarqueeHoverEvents() {
             certificatesMarquee.classList.remove('paused');
         });
     });
+
+    // Experience marquee hover events
+    const experienceMarquee = document.getElementById('experienceMarquee');
+    const experienceCards = experienceMarquee.querySelectorAll('.marquee-item');
+
+    experienceCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            experienceMarquee.classList.add('paused');
+        });
+        card.addEventListener('mouseleave', () => {
+            experienceMarquee.classList.remove('paused');
+        });
+    });
 }
 
 // Certificate details popup
@@ -199,7 +213,6 @@ function showCertificateDetails(certType) {
 }
 
 // Section switching functionality
-// Section switching functionality
 function showSection(sectionType) {
     // Get all sections
     const projectsSection = document.getElementById('projectsSection');
@@ -221,11 +234,13 @@ function showSection(sectionType) {
     const projectsGrid = document.getElementById('projectsGrid');
     const certificatesMarqueeContainer = document.getElementById('certificatesMarqueeContainer');
     const certificatesGrid = document.getElementById('certificatesGrid');
+    const experienceMarqueeContainer = document.querySelector('#experienceSection .marquee-container');
     
     if (projectsMarqueeContainer) projectsMarqueeContainer.style.display = 'none';
     if (projectsGrid) projectsGrid.style.display = 'none';
     if (certificatesMarqueeContainer) certificatesMarqueeContainer.style.display = 'none';
     if (certificatesGrid) certificatesGrid.style.display = 'none';
+    if (experienceMarqueeContainer) experienceMarqueeContainer.style.display = 'none';
 
     // Reset all button styles to inactive state
     document.getElementById('projectsBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all text-gray-400';
@@ -250,15 +265,9 @@ function showSection(sectionType) {
         experienceSection.style.display = 'block';
         document.getElementById('experienceBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-indigo-400 text-indigo-400';
         
-        // Trigger fade up animation for experience cards
-        setTimeout(() => {
-            const experienceCards = document.querySelectorAll('.experience-card');
-            experienceCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('fade-up-active');
-                }, index * 200); // Staggered animation
-            });
-        }, 100);
+        // Show experience marquee
+        const expMarquee = document.querySelector('#experienceSection .marquee-container');
+        if (expMarquee) expMarquee.style.display = 'block';
         
         // Scroll to the experience section immediately
         setTimeout(() => {
@@ -269,59 +278,6 @@ function showSection(sectionType) {
         }, 10);
     }
 }
-
-// Initialize marquee functionality when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Setup marquee hover events
-    setupMarqueeHoverEvents();
-
-    // Check for show parameter in URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const showSectionParam = urlParams.get('show');
-    
-    // Check for hash in URL to determine which section to show
-    const hash = window.location.hash;
-    
-    if (showSectionParam === 'experience') {
-        // Show experience section if show=experience parameter is present
-        showSection('experience');
-    } else if (hash === '#experience') {
-        // Show experience section if hash is #experience
-        showSection('experience');
-        // Scroll to experience section after a short delay to ensure it's rendered
-        setTimeout(() => {
-            document.getElementById('experienceSection').scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-    } else {
-        // Show projects section by default
-        showSection('projects');
-    }
-
-    // Add event delegation for project cards
-    document.addEventListener('click', function(e) {
-        // Find the closest project card
-        let projectCard = e.target.closest('.marquee-item[data-project-id]');
-        if (projectCard) {
-            const projectId = projectCard.dataset.projectId;
-            window.location.href = `project.html?type=${projectId}`;
-            return;
-        }
-        
-        // Find the closest experience card
-        let experienceCard = e.target.closest('.experience-card[data-experience-id]');
-        if (experienceCard) {
-            const experienceId = experienceCard.dataset.experienceId;
-            window.location.href = `experience.html?type=${experienceId}`;
-            return;
-        }
-        
-        // Find the closest certificate card
-        let certCard = e.target.closest('.marquee-item[data-certificate-type]');
-        if (certCard) {
-            showCertificateDetails(certCard.dataset.certificateType);
-        }
-    });
-});
 
 // Project filter functionality
 function filterProjects(category) {
@@ -406,24 +362,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup marquee hover events
     setupMarqueeHoverEvents();
 
-    // Setup fade up animation for experience cards
-    const fadeUpCards = document.querySelectorAll('.fade-up-card');
-    const fadeUpObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-up-active');
-                fadeUpObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    fadeUpCards.forEach(card => {
-        fadeUpObserver.observe(card);
-    });
-
     // Check for show parameter in URL
     const urlParams = new URLSearchParams(window.location.search);
     const showSectionParam = urlParams.get('show');
@@ -471,3 +409,70 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+function showSection(section) {
+        // Hide all sections
+        document.getElementById('projectsSection').classList.add('hidden');
+        document.getElementById('certificatesSection').classList.add('hidden');
+        document.getElementById('experienceSection').classList.add('hidden');
+
+        // Show the selected section
+        document.getElementById(section + 'Section').classList.remove('hidden');
+
+        // Update active button
+        document.querySelectorAll('.section-control-btn').forEach(btn => {
+            btn.classList.remove('border-purple-400', 'text-purple-400');
+            btn.classList.add('text-gray-400');
+        });
+        const activeBtn = document.getElementById(section + 'Btn');
+        if (activeBtn) {
+            activeBtn.classList.remove('text-gray-400');
+            activeBtn.classList.add('border-purple-400', 'text-purple-400');
+        }
+    }
+
+    // Function to show experience details
+    function showExperienceDetails(expType) {
+        window.location.href = `experience.html?type=${expType}`;
+    }
+
+    // Function to filter experiences
+    function filterExperiences(category) {
+        const cards = document.querySelectorAll('.experience-card');
+        
+        // Update active button
+        document.querySelectorAll('#experienceSection .filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-category') === category) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Filter cards
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'block';
+                // Re-trigger animation
+                const slideUpElement = card.querySelector('.slide-up');
+                slideUpElement.style.animation = 'none';
+                setTimeout(() => {
+                    slideUpElement.style.animation = '';
+                }, 10);
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // On page load, check for 'show' parameter
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const showSectionParam = urlParams.get('show');
+        if (showSectionParam) {
+            showSection(showSectionParam);
+        } else {
+            // Default to projects
+            showSection('projects');
+        }
+    });
+
+
