@@ -267,6 +267,14 @@ function showSection(sectionType) {
         // Show experience marquee
         const expMarquee = document.querySelector('#experienceSection .marquee-container');
         if (expMarquee) expMarquee.style.display = 'block';
+        
+        // Scroll to the experience section immediately
+        setTimeout(() => {
+            const projectsContainer = document.getElementById('projects');
+            if (projectsContainer) {
+                window.scrollTo(0, projectsContainer.offsetTop);
+            }
+        }, 10);
     }
 }
 
@@ -353,9 +361,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup marquee hover events
     setupMarqueeHoverEvents();
 
+    // Check for show parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const showSectionParam = urlParams.get('show');
+    
     // Check for hash in URL to determine which section to show
     const hash = window.location.hash;
-    if (hash === '#experience') {
+    
+    if (showSectionParam === 'experience') {
+        // Show experience section if show=experience parameter is present
+        showSection('experience');
+    } else if (hash === '#experience') {
         // Show experience section if hash is #experience
         showSection('experience');
         // Scroll to experience section after a short delay to ensure it's rendered
