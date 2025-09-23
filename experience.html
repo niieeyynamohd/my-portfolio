@@ -6,22 +6,32 @@
   <title>Experience Details</title>
   <link href="./output.css" rel="stylesheet">
   <style>
+  
     body {
       padding-top: 100px;
       text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      line-height: 2.9;
     }
+    
+    
   </style>
 </head>
 <body class="bg-gray-900 text-white overflow-x-hidden">
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-purple-500/20">
+  <nav
+    class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-purple-500/20">
     <div class="max-w-6xl mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
         <div class="text-2xl font-bold flex items-center">
           <span class="text-blue-400 animate-pulse" style="animation-duration: 2s;">N</span>
-          <span class="text-purple-400 animate-pulse" style="animation-duration: 2s; animation-delay: 0.5s;">M</span>
+          <span class="text-purple-400 animate-pulse"
+            style="animation-duration: 2s; animation-delay: 0.5s;">M</span>
         </div>
-        <button onclick="goBack()" class="border-2 text-purple-600 px-4 py-2 rounded-full transition-colors" style="border-color: purple;">
+        <button onclick="goBack()"
+          class="border-2 text-purple-600 px-4 py-2 rounded-full transition-colors"
+          style="border-color: purple;">
           ❮ Back
         </button>
       </div>
@@ -40,12 +50,7 @@
   <script>
     // Function to go back
     function goBack() {
-      // Get the section parameter from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const section = urlParams.get('section') || 'projects';
-      
-      // Navigate back to index.html with the section parameter
-      window.location.href = `index.html?section=${section}`;
+      window.location.href = 'index.html?show=experience';
     }
 
     // Get experience type from URL
@@ -120,7 +125,8 @@
       `;
       document.getElementById('experienceDetails').innerHTML = experienceHTML;
     } else {
-      document.getElementById('experienceDetails').innerHTML = '<p class="text-center text-gray-400">Experience not found.</p>';
+      document.getElementById('experienceDetails').innerHTML =
+        '<p class="text-center text-gray-400">Experience not found.</p>';
     }
   </script>
 </body>

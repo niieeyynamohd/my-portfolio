@@ -1,4 +1,3 @@
-
 function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({
         behavior: 'smooth'
@@ -133,84 +132,36 @@ window.addEventListener('scroll', () => {
 function setupMarqueeHoverEvents() {
     // Projects marquee hover events
     const projectsMarquee = document.getElementById('projectsMarquee');
-    const projectsCards = projectsMarquee.querySelectorAll('.marquee-item');
+    if (projectsMarquee) {
+        const projectsCards = projectsMarquee.querySelectorAll('.marquee-item');
 
-    projectsCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            projectsMarquee.classList.add('paused');
+        projectsCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                projectsMarquee.classList.add('paused');
+            });
+            card.addEventListener('mouseleave', () => {
+                projectsMarquee.classList.remove('paused');
+            });
         });
-        card.addEventListener('mouseleave', () => {
-            projectsMarquee.classList.remove('paused');
-        });
-    });
+    }
 
     // Certificates marquee hover events
     const certificatesMarquee = document.getElementById('certificatesMarquee');
-    const certificatesCards = certificatesMarquee.querySelectorAll('.marquee-item');
+    if (certificatesMarquee) {
+        const certificatesCards = certificatesMarquee.querySelectorAll('.marquee-item');
 
-    certificatesCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            certificatesMarquee.classList.add('paused');
+        certificatesCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                certificatesMarquee.classList.add('paused');
+            });
+            card.addEventListener('mouseleave', () => {
+                certificatesMarquee.classList.remove('paused');
+            });
         });
-        card.addEventListener('mouseleave', () => {
-            certificatesMarquee.classList.remove('paused');
-        });
-    });
-
-    // Experience marquee hover events
-    const experienceMarquee = document.getElementById('experienceMarquee');
-    const experienceCards = experienceMarquee.querySelectorAll('.marquee-item');
-
-    experienceCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            experienceMarquee.classList.add('paused');
-        });
-        card.addEventListener('mouseleave', () => {
-            experienceMarquee.classList.remove('paused');
-        });
-    });
-}
-
-// Certificate details popup
-function showCertificateDetails(certType) {
-    const details = {
-        'award': {
-            title: 'GOLD AWARD',
-            description: 'This award was presented for my final year project, "Interactive Approach to Preserve the Kadazandusun Language Through Gamification." The project involved developing an innovative application that uses gamification to help preserve a local language.',
-            issuer: 'Pertandingan Inovasi Antara Asasi Malaysia (PITRAM 2025)',
-            date: '22 - 23 February 2025'
-        },
-        'elatih': {
-            title: 'Navigating Through Microsoft Power BI',
-            description: 'A certificate of completion for an online course focused on navigating and using Microsoft Power BI. This demonstrates my proficiency in data visualization and business intelligence, skills that are highly valued in data-driven roles.',
-            issuer: 'HRD Corp e-LATiH (Human Resource Development Corporation)',
-            date: '19 September 2025'
-        },
-        'program': {
-            title: 'Certificate of Participation: Webinar Leadership: Humanism or Humanity',
-            description: 'A certificate acknowledging participation in a leadership webinar that explored the concepts of humanism and humanity. This demonstrates engagement in personal development and a commitment to understanding leadership principles.',
-            issuer: 'UMS (Universiti Malaysia Sabah), with collaboration from the Centre for Co-Curriculum and Student Development',
-            date: '1 December 2021'
-        },
-        'diploma': {
-            title: 'Diploma In Information Technology',
-            description: 'This diploma serves as an official certification of my educational qualification at the diploma level. It represents the successful completion of a comprehensive program in Information Technology with a specialization in Digital Technology, providing a strong foundation in computing, programming, and platform technologies.',
-            issuer: 'Politeknik Kuching Sarawak',
-            date: 'January 2024'
-        },
-        'cisco': {
-            title: 'Cybersecurity Essentials',
-            description: 'A certificate for completing the Cybersecurity Essentials course, which provides foundational knowledge and skills in cybersecurity. This includes understanding security principles, threats, and best practices for protecting data and networks.',
-            issuer: 'Cisco Networking Academy and UMS',
-            date: '25 January 2025'
-        }
-    };
-
-    const cert = details[certType];
-    if (cert) {
-        alert(`${cert.title}\n\n${cert.description}\n\nIssued by: ${cert.issuer}\nDate: ${cert.date}`);
     }
 }
+
+
 
 // Section switching functionality
 function showSection(sectionType) {
@@ -234,13 +185,11 @@ function showSection(sectionType) {
     const projectsGrid = document.getElementById('projectsGrid');
     const certificatesMarqueeContainer = document.getElementById('certificatesMarqueeContainer');
     const certificatesGrid = document.getElementById('certificatesGrid');
-    const experienceMarqueeContainer = document.querySelector('#experienceSection .marquee-container');
     
     if (projectsMarqueeContainer) projectsMarqueeContainer.style.display = 'none';
     if (projectsGrid) projectsGrid.style.display = 'none';
     if (certificatesMarqueeContainer) certificatesMarqueeContainer.style.display = 'none';
     if (certificatesGrid) certificatesGrid.style.display = 'none';
-    if (experienceMarqueeContainer) experienceMarqueeContainer.style.display = 'none';
 
     // Reset all button styles to inactive state
     document.getElementById('projectsBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all text-gray-400';
@@ -264,10 +213,6 @@ function showSection(sectionType) {
         experienceSection.classList.remove('hidden');
         experienceSection.style.display = 'block';
         document.getElementById('experienceBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-indigo-400 text-indigo-400';
-        
-        // Show experience marquee
-        const expMarquee = document.querySelector('#experienceSection .marquee-container');
-        if (expMarquee) expMarquee.style.display = 'block';
         
         // Scroll to the experience section immediately
         setTimeout(() => {
@@ -357,21 +302,32 @@ function filterCertificates(category) {
     }
 }
 
+// Function to show experience details
+function showExperienceDetails(expType) {
+    window.location.href = `experience.html?type=${expType}`;
+}
+
 // Initialize marquee functionality when page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Setup marquee hover events
     setupMarqueeHoverEvents();
 
-    // Check for show parameter in URL
+    // Check for section parameter in URL
     const urlParams = new URLSearchParams(window.location.search);
+    const sectionParam = urlParams.get('section');
+    
+    // Check for show parameter in URL
     const showSectionParam = urlParams.get('show');
     
     // Check for hash in URL to determine which section to show
     const hash = window.location.hash;
     
-    if (showSectionParam === 'experience') {
-        // Show experience section if show=experience parameter is present
-        showSection('experience');
+    if (sectionParam) {
+        // Show section specified in section parameter
+        showSection(sectionParam);
+    } else if (showSectionParam) {
+        // Show section specified in show parameter
+        showSection(showSectionParam);
     } else if (hash === '#experience') {
         // Show experience section if hash is #experience
         showSection('experience');
@@ -396,8 +352,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Find the closest experience card
         let experienceCard = e.target.closest('.marquee-item[data-experience-id]');
+        if (!experienceCard) {
+            experienceCard = e.target.closest('.experience-card');
+        }
         if (experienceCard) {
-            const experienceId = experienceCard.dataset.experienceId;
+            const experienceId = experienceCard.dataset.experienceId || experienceCard.getAttribute('onclick').match(/'([^']+)'/)[1];
             window.location.href = `experience.html?type=${experienceId}`;
             return;
         }
@@ -409,70 +368,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-function showSection(section) {
-        // Hide all sections
-        document.getElementById('projectsSection').classList.add('hidden');
-        document.getElementById('certificatesSection').classList.add('hidden');
-        document.getElementById('experienceSection').classList.add('hidden');
-
-        // Show the selected section
-        document.getElementById(section + 'Section').classList.remove('hidden');
-
-        // Update active button
-        document.querySelectorAll('.section-control-btn').forEach(btn => {
-            btn.classList.remove('border-purple-400', 'text-purple-400');
-            btn.classList.add('text-gray-400');
-        });
-        const activeBtn = document.getElementById(section + 'Btn');
-        if (activeBtn) {
-            activeBtn.classList.remove('text-gray-400');
-            activeBtn.classList.add('border-purple-400', 'text-purple-400');
-        }
-    }
-
-    // Function to show experience details
-    function showExperienceDetails(expType) {
-        window.location.href = `experience.html?type=${expType}`;
-    }
-
-    // Function to filter experiences
-    function filterExperiences(category) {
-        const cards = document.querySelectorAll('.experience-card');
-        
-        // Update active button
-        document.querySelectorAll('#experienceSection .filter-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-category') === category) {
-                btn.classList.add('active');
-            }
-        });
-        
-        // Filter cards
-        cards.forEach(card => {
-            if (category === 'all' || card.getAttribute('data-category') === category) {
-                card.style.display = 'block';
-                // Re-trigger animation
-                const slideUpElement = card.querySelector('.slide-up');
-                slideUpElement.style.animation = 'none';
-                setTimeout(() => {
-                    slideUpElement.style.animation = '';
-                }, 10);
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    // On page load, check for 'show' parameter
-    document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const showSectionParam = urlParams.get('show');
-        if (showSectionParam) {
-            showSection(showSectionParam);
-        } else {
-            // Default to projects
-            showSection('projects');
-        }
-    });
-
-
