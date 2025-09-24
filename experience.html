@@ -10,6 +10,7 @@
     body {
       padding-top: 100px;
       text-align: justify;
+      font-family: 'Garamond';
       text-justify: inter-word;
       hyphens: auto;
       line-height: 1.5;
@@ -102,34 +103,35 @@
 
     if (experience) {
       // Build the HTML for experience details
-      const experienceHTML = `
-        <!-- Left Card (Image) -->
-        <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 p-6 flex items-center justify-center">
-          <img src="${experience.image}" alt="${experience.title}" class="rounded-xl shadow-lg max-h-80 object-cover">
-        </div>
+    const experienceHTML = `
+  <!-- Left Card (Image) -->
+  <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 p-6 flex items-center justify-center">
+    <img src="${experience.image}" alt="${experience.title}" class="rounded-xl shadow-lg max-h-80 object-cover">
+  </div>
 
-        <!-- Right Card (Details) -->
-        <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 p-8">
-          <h2 class="text-3xl font-bold mb-2 text-purple-400">${experience.title}</h2>
-          <p class="text-lg text-pink-400 mb-1">${experience.company}</p>
-          <p class="text-md text-blue-400 mb-6">${experience.period}</p>
-          <p class="text-lg text-gray-300 mb-6 ">${experience.description}</p>
-          
-          <div class="mb-8">
-            <h3 class="text-xl font-semibold mb-3 text-blue-400">Key Achievements</h3>
-            <ul class="grid grid-cols-1 gap-2">
-              ${experience.achievements.map(achievement => `<li class="flex items-start"><span class="text-purple-400 mr-2">•</span> ${achievement}</li>`).join('')}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 class="text-xl font-semibold mb-3 text-green-400">Technologies Used</h3>
-            <div class="flex flex-wrap gap-2">
-              ${experience.technologies.map(tech => `<span class="px-3 py-1 bg-purple-600/30 rounded-full text-sm">${tech}</span>`).join('')}
-            </div>
-          </div>
-        </div>
-      `;
+  <!-- Right Card (Details) -->
+  <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 p-8">
+    <h2 class="text-3xl font-bold mb-2 text-purple-400" style="text-align:left; text-justify:initial;">${experience.title}</h2>
+    <p class="text-lg text-pink-400 mb-1" style="text-align:left; text-justify:initial;">${experience.company}</p>
+    <p class="text-md text-blue-400 mb-6" style="text-align:left; text-justify:initial;">${experience.period}</p>
+    <p class="text-lg text-gray-300 mb-6 description" style="text-align:justify; text-justify:inter-word; font-size:17px;">${experience.description}</p>
+    
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold mb-3 text-blue-400" style="text-align:left; text-justify:initial;">Key Achievements</h3>
+      <ul class="grid grid-cols-1 gap-2">
+        ${experience.achievements.map(achievement => `<li class="flex items-start" style="text-align:justify; text-justify:inter-word; font-size 12px;"><span class="text-purple-400 mr-2 ">•</span> ${achievement}</li>`).join('')}
+      </ul>
+    </div>
+    
+    <div>
+      <h3 class="text-xl font-semibold mb-3 text-green-400" style="text-align:left; text-justify:initial;">Technologies Used</h3>
+      <div class="flex flex-wrap gap-2">
+        ${experience.technologies.map(tech => `<span class="px-3 py-1 bg-purple-600/30 rounded-full text-sm" style="text-align:left; text-justify:initial;">${tech}</span>`).join('')}
+      </div>
+    </div>
+  </div>
+`;
+
       document.getElementById('experienceDetails').innerHTML = experienceHTML;
     } else {
       document.getElementById('experienceDetails').innerHTML =
