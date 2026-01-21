@@ -130,21 +130,6 @@ window.addEventListener('scroll', () => {
 
 // Marquee functionality
 function setupMarqueeHoverEvents() {
-    // Projects marquee hover events
-    const projectsMarquee = document.getElementById('projectsMarquee');
-    if (projectsMarquee) {
-        const projectsCards = projectsMarquee.querySelectorAll('.marquee-item');
-
-        projectsCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                projectsMarquee.classList.add('paused');
-            });
-            card.addEventListener('mouseleave', () => {
-                projectsMarquee.classList.remove('paused');
-            });
-        });
-    }
-
     // Certificates marquee hover events
     const certificatesMarquee = document.getElementById('certificatesMarquee');
     if (certificatesMarquee) {
@@ -160,8 +145,6 @@ function setupMarqueeHoverEvents() {
         });
     }
 }
-
-
 
 // Section switching functionality
 function showSection(sectionType) {
@@ -181,13 +164,9 @@ function showSection(sectionType) {
     experienceSection.style.display = 'none';
     
     // Hide all marquee containers and grids
-    const projectsMarqueeContainer = document.getElementById('projectsMarqueeContainer');
-    const projectsGrid = document.getElementById('projectsGrid');
     const certificatesMarqueeContainer = document.getElementById('certificatesMarqueeContainer');
     const certificatesGrid = document.getElementById('certificatesGrid');
     
-    if (projectsMarqueeContainer) projectsMarqueeContainer.style.display = 'none';
-    if (projectsGrid) projectsGrid.style.display = 'none';
     if (certificatesMarqueeContainer) certificatesMarqueeContainer.style.display = 'none';
     if (certificatesGrid) certificatesGrid.style.display = 'none';
 
@@ -233,34 +212,27 @@ function filterProjects(category) {
     document.querySelector(`#projectsSection [data-category="${category}"]`).classList.add('active');
     
     // Get all project items
-    const marqueeContainer = document.getElementById('projectsMarqueeContainer');
-    const gridContainer = document.getElementById('projectsGrid');
-    const allItems = document.querySelectorAll('#projectsMarquee .marquee-item');
+    const allItems = document.querySelectorAll('#projectsGrid .project-card');
     
-    // Clear containers
-    gridContainer.innerHTML = '';
-    
-    if (category === 'all') {
-        // Show marquee and hide grid
-        marqueeContainer.classList.remove('hidden');
-        marqueeContainer.style.display = 'block';
-        gridContainer.classList.add('hidden');
-        gridContainer.style.display = 'none';
-    } else {
-        // Hide marquee and show grid
-        marqueeContainer.classList.add('hidden');
-        marqueeContainer.style.display = 'none';
-        gridContainer.classList.remove('hidden');
-        gridContainer.style.display = 'grid';
-        
-        // Filter and add items to grid
-        allItems.forEach(item => {
-            if (item.dataset.category === category) {
-                const clone = item.cloneNode(true);
-                gridContainer.appendChild(clone);
-            }
-        });
-    }
+    // Filter items with slide-up animation
+    let visibleIndex = 0;
+    allItems.forEach((item, index) => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+            // Reset animation
+            item.style.animation = 'none';
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px)';
+            // Force reflow
+            item.offsetHeight;
+            // Apply slide-up animation with delay based on visible index
+            item.style.animation = `slideUp 0.8s ease forwards`;
+            item.style.animationDelay = `${visibleIndex * 0.2}s`; // Delay 0.2s antara kad
+            visibleIndex++;
+        } else {
+            item.style.display = 'none';
+        }
+    });
 }
 
 // Certificate filter functionality
@@ -343,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event delegation for project cards
     document.addEventListener('click', function(e) {
         // Find the closest project card
-        let projectCard = e.target.closest('.marquee-item[data-project-id]');
+        let projectCard = e.target.closest('.project-card[data-project-id]');
         if (projectCard) {
             const projectId = projectCard.dataset.projectId;
             window.location.href = `project.html?type=${projectId}`;

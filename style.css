@@ -24,6 +24,17 @@
     to { opacity: 1; }
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes slideUp {
     to {
         transform: translateY(0);
@@ -506,6 +517,11 @@
     opacity: 0;
 }
 
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
 .slide-up {
     animation: slideUp 0.8s ease-out forwards;
     transform: translateY(50px);
@@ -629,6 +645,31 @@
 
 .label-float {
     animation: labelFloat 3s ease-in-out infinite;
+}
+
+/* Projects Grid Styles */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem; /* Tambah gap antara kad */
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+.project-card {
+    opacity: 0;
+    transform: translateY(50px); /* Sama seperti slide-up */
+    animation: slideUp 0.8s ease forwards; /* Guna slide-up animation */
+}
+
+/* Pastikan semua kad projek guna slide-up */
+.project-card .relative {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .relative {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
 }
 
 /* Marquee Styles */
@@ -1329,7 +1370,7 @@
     margin-top: 2rem;
 }
 
-#projectsGrid .marquee-item {
+#projectsGrid .project-card {
     margin-right: 0;
 }
 
@@ -1438,7 +1479,7 @@ button.back-button:hover {
     }
     
     /* Projects section responsive */
-    .marquee-item {
+    .project-card {
         width: 280px;
     }
     
@@ -1486,7 +1527,7 @@ button.back-button:hover {
         font-size: 2rem;
     }
     
-    .marquee-item {
+    .project-card {
         width: 240px;
     }
     
@@ -1533,7 +1574,7 @@ video {
 }
 
 /* Ensure consistent text alignment in all cards */
-.marquee-item p.block.font-sans {
+.project-card p.block.font-sans {
     text-align: justify !important;
     text-justify: inter-word !important;
     hyphens: auto;
@@ -1542,48 +1583,17 @@ video {
 }
 
 /* For better text flow in cards */
-.marquee-item {
+.project-card {
     overflow: hidden;
 }
 
-.marquee-item .p-6 {
+.project-card .p-6 {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.marquee-item .project-description {
-    flex-grow: 1;
-    margin-bottom: 1rem;
-}
-
-/* Force text justification for all project descriptions */
-.marquee-item .text-gray-300 {
-    text-align: justify !important;
-    text-justify: distribute !important;
-    hyphens: auto;
-    word-wrap: break-word;
-    line-height: 1.6;
-}
-
-/* Additional styling for better text flow */
-.marquee-item {
-    overflow: hidden;
-    padding: 1.5rem;
-    width: 320px;
-    min-height: 400px;
-}
-
-/* Adjust text container */
-.marquee-item .p-6 {
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Ensure description takes appropriate space */
-.marquee-item .project-description {
+.project-card .project-description {
     flex-grow: 1;
     margin-bottom: 1rem;
 }
