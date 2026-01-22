@@ -36,7 +36,7 @@ mobileMenuLinks.forEach(link => {
 });
 
 // Typing animation for name
-const names = ['Amanina ', 'Software Developer', 'Aspiring Full Stack Developer', 'Tech Enthusiast'];
+const names = ['Amanina ', 'Software Developer', 'Aspiring Full Stack Developer', 'Tech Enthusiast', 'UI/UX Designer', 'Creative Designer'];
 let nameIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
