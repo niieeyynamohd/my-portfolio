@@ -73,7 +73,50 @@ video {
     height: 100%;
 }
 
-/* Certificate responsive styles */
+/* Certificate fade-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Certificate fade-up animation class */
+.certificate-fade-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Certificate Card Responsive Styles - Enhanced for Mobile */
+
+/* Base certificate card styles */
+.certificate-card {
+    position: relative;
+    width: auto;
+    height: auto;
+    min-width: 300px;
+    min-height: 200px;
+    max-width: 500px;
+    max-height: 600px;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    border: 2px solid rgba(249, 115, 22, 0.4);
+    margin: 0 auto;
+}
+
+/* Certificate card image styles */
 .certificate-card_image {
     width: 100%;
     height: 100%;
@@ -84,22 +127,355 @@ video {
     box-sizing: border-box;
 }
 
-/* Add these responsive styles for certificates */
+/* Certificate card content styles */
+.certificate-card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.certificate-card__title {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: #f97316;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.certificate-card__issuer {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #d1d5db;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.certificate-card__details {
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.certificate-card__date,
+.certificate-card__validity,
+.certificate-card__id {
+    margin: 2px 0;
+    font-size: 11px;
+    color: #f3f4f6;
+    font-weight: 500;
+    text-align: center;
+}
+
+.certificate-card__description {
+    margin: 0;
+    font-size: 12px;
+    color: #000000;
+    line-height: 1.4;
+    text-align: justify;
+    flex-grow: 1;
+    display: flex;
+    align-items: justify;
+}
+
+/* Tablet screens - up to 768px */
 @media (max-width: 768px) {
     .certificate-card {
-        min-width: 280px;
-        min-height: 180px;
+        min-width: 260px;
+        min-height: 160px;
         max-width: 320px;
         max-height: 400px;
+        border-radius: 12px;
+    }
+    
+    .certificate-card_image {
+        padding: 8px;
+    }
+    
+    .certificate-card__content {
+        padding: 16px;
+    }
+    
+    .certificate-card__title {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+    
+    .certificate-card__issuer {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .certificate-card__details {
+        padding: 6px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+    }
+    
+    .certificate-card__date,
+    .certificate-card__validity,
+    .certificate-card__id {
+        font-size: 10px;
+        margin: 1px 0;
+    }
+    
+    .certificate-card__description {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+}
+
+/* Small mobile screens - up to 640px */
+@media (max-width: 640px) {
+    .certificate-card {
+        min-width: 240px;
+        min-height: 140px;
+        max-width: 280px;
+        max-height: 350px;
+        border-radius: 10px;
+        margin: 0 auto 1rem;
+    }
+    
+    .certificate-card_image {
+        padding: 6px;
+    }
+    
+    .certificate-card__content {
+        padding: 12px;
+    }
+    
+    .certificate-card__title {
+        font-size: 16px;
+        margin-bottom: 4px;
+        line-height: 1.1;
+    }
+    
+    .certificate-card__issuer {
+        font-size: 12px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+    
+    .certificate-card__details {
+        padding: 4px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+    }
+    
+    .certificate-card__date,
+    .certificate-card__validity,
+    .certificate-card__id {
+        font-size: 9px;
+        margin: 0.5px 0;
+    }
+    
+    .certificate-card__description {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+}
+
+/* Extra small mobile screens - up to 480px */
+@media (max-width: 480px) {
+    .certificate-card {
+        min-width: 200px;
+        min-height: 120px;
+        max-width: 240px;
+        max-height: 300px;
+        border-radius: 8px;
+        margin: 0 auto 0.75rem;
+    }
+    
+    .certificate-card_image {
+        padding: 4px;
+    }
+    
+    .certificate-card__content {
+        padding: 10px;
+    }
+    
+    .certificate-card__title {
+        font-size: 14px;
+        margin-bottom: 3px;
+        line-height: 1.0;
+    }
+    
+    .certificate-card__issuer {
+        font-size: 11px;
+        margin-bottom: 6px;
+        line-height: 1.1;
+    }
+    
+    .certificate-card__details {
+        padding: 3px;
+        margin-bottom: 6px;
+        border-radius: 3px;
+    }
+    
+    .certificate-card__date,
+    .certificate-card__validity,
+    .certificate-card__id {
+        font-size: 8px;
+        margin: 0.5px 0;
+    }
+    
+    .certificate-card__description {
+        font-size: 9px;
+        line-height: 1.1;
+    }
+}
+
+/* Ultra small mobile screens - up to 380px */
+@media (max-width: 380px) {
+    .certificate-card {
+        min-width: 180px;
+        min-height: 100px;
+        max-width: 220px;
+        max-height: 280px;
+        border-radius: 6px;
+        margin: 0 auto 0.5rem;
+    }
+    
+    .certificate-card_image {
+        padding: 3px;
+    }
+    
+    .certificate-card__content {
+        padding: 8px;
+    }
+    
+    .certificate-card__title {
+        font-size: 12px;
+        margin-bottom: 2px;
+        line-height: 1.0;
+    }
+    
+    .certificate-card__issuer {
+        font-size: 10px;
+        margin-bottom: 4px;
+        line-height: 1.0;
+    }
+    
+    .certificate-card__details {
+        padding: 2px;
+        margin-bottom: 4px;
+        border-radius: 2px;
+    }
+    
+    .certificate-card__date,
+    .certificate-card__validity,
+    .certificate-card__id {
+        font-size: 7px;
+        margin: 0.25px 0;
+    }
+    
+    .certificate-card__description {
+        font-size: 8px;
+        line-height: 1.0;
+    }
+}
+
+/* Certificate Grid Responsive Adjustments */
+#certificatesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+/* Tablet grid adjustment */
+@media (max-width: 768px) {
+    #certificatesGrid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Small mobile grid adjustment */
+@media (max-width: 640px) {
+    #certificatesGrid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 0.75rem;
+    }
+}
+
+/* Extra small mobile grid adjustment */
+@media (max-width: 480px) {
+    #certificatesGrid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.5rem;
+    }
+}
+
+/* Ultra small mobile grid adjustment */
+@media (max-width: 380px) {
+    #certificatesGrid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Marquee item responsive adjustments */
+.marquee-item {
+    flex-shrink: 0;
+    margin-right: 2rem;
+    width: 350px;
+}
+
+@media (max-width: 768px) {
+    .marquee-item {
+        width: 300px;
+        margin-right: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .marquee-item {
+        width: 260px;
+        margin-right: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .certificate-card {
-        min-width: 240px;
-        min-height: 160px;
-        max-width: 280px;
-        max-height: 360px;
+    .marquee-item {
+        width: 220px;
+        margin-right: 0.75rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .marquee-item {
+        width: 200px;
+        margin-right: 0.5rem;
+    }
+}
+
+/* Certificate fade-up animation adjustments for mobile */
+@media (max-width: 640px) {
+    .certificate-fade-up {
+        animation-duration: 0.6s;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-fade-up {
+        animation-duration: 0.5s;
     }
 }
 
@@ -116,17 +492,6 @@ video {
 
 @keyframes fadeIn {
     to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @keyframes slideUp {
@@ -795,40 +1160,12 @@ video {
     animation-play-state: paused;
 }
 
-.marquee-item {
-    flex-shrink: 0;
-    margin-right: 2rem;
-    width: 350px;
-}
-
 .projects-marquee {
     animation: marqueeScroll 20s linear infinite;
 }
 
 .certificates-marquee {
     animation: marqueeScroll 30s linear infinite;
-}
-
-.certificate-card {
-    position: relative;
-    width: auto;
-    height: auto;
-    min-width: 300px;
-    min-height: 200px;
-    max-width: 500px;
-    max-height: 600px;
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    perspective: 1000px;
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    border: 2px solid rgba(249, 115, 22, 0.4);
-    margin: 0 auto;
 }
 
 .certificate-card svg {
@@ -839,59 +1176,8 @@ video {
     filter: drop-shadow(0 4px 8px rgba(249, 115, 22, 0.3));
 }
 
-.certificate-card__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 .certificate-card:hover .certificate-card__content {
     transform: rotateX(0deg);
-}
-
-.certificate-card__title {
-    margin: 0 0 8px 0;
-    font-size: 20px;
-    color: #f97316;
-    font-weight: 700;
-    text-align: center;
-}
-
-.certificate-card__issuer {
-    margin: 0 0 12px 0;
-    font-size: 14px;
-    color: #d1d5db;
-    font-weight: 500;
-    text-align: center;
-}
-
-.certificate-card__details {
-    background: rgba(249, 115, 22, 0.1);
-    border-radius: 8px;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(249, 115, 22, 0.2);
-}
-
-.certificate-card__date,
-.certificate-card__validity,
-.certificate-card__id {
-    margin: 2px 0;
-    font-size: 11px;
-    color: #f3f4f6;
-    font-weight: 500;
-    text-align: center;
 }
 
 .certificate-card:hover svg {
@@ -900,17 +1186,6 @@ video {
 
 .certificate-card:hover .certificate-card_image {
     transform: scale(0);
-}
-
-.certificate-card__description {
-    margin: 0;
-    font-size: 12px;
-    color: #000000;
-    line-height: 1.4;
-    text-align: justify;
-    flex-grow: 1;
-    display: flex;
-    align-items: justify;
 }
 
 /* Certificate Card Variants */
@@ -1461,19 +1736,6 @@ video {
 }
 
 #projectsGrid .project-card {
-    margin-right: 0;
-}
-
-/* Certificate Grid Styles */
-#certificatesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    margin-top: 2rem;
-}
-
-#certificatesGrid .marquee-item {
     margin-right: 0;
 }
 
