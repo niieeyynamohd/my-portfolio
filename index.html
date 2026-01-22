@@ -5,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amanina Portfolio</title>
     <link href="./output.css" rel="stylesheet">
+    <style>
+        /* --- Custom CSS for Fade-Up Animation --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Certificate fade-up animation class */
+        .certificate-fade-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Modify the certificates grid display */
+        #certificatesGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+            margin-top: 2rem;
+        }
+
+        /* Hide the marquee container by default */
+        #certificatesMarqueeContainer {
+            display: none;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-white overflow-x-hidden">
     <!-- Navigation -->
@@ -447,7 +480,7 @@
                                 </h5>
                                <p class="block font-sans text-sm font-light leading-relaxed text-gray-300 antialiased mb-4 project-description">
                                   
-                               The Student Clearance system is a web app that simplifies students’ approval and task completion before graduation.
+                               The Student Clearance system is a web app that simplifies students' approval and task completion before graduation.
                                 </p>
                                 <div class="text-xs mb-4 text-center">
                                     <span class="text-cyan-400 font-medium border-b-2 border-cyan-400">HTML</span>
@@ -743,8 +776,11 @@
                     </button>
                 </div>
                 
-               
-                <div class="marquee-container" id="certificatesMarqueeContainer">
+                <!-- Certificates Grid (Primary Display Method) -->
+                <div id="certificatesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                
+                <!-- Marquee Container (Hidden by default) -->
+                <div class="marquee-container hidden" id="certificatesMarqueeContainer">
                     <div class="marquee-content certificates-marquee" id="certificatesMarquee">
                       <div class="marquee-item" data-category="achievement" data-certificate-type="award">
                             <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('award')">
@@ -954,8 +990,6 @@
                     </div>
                 </div>
                 
-                <!-- Certificates Grid (Hidden by default) -->
-                <div id="certificatesGrid" class="hidden"></div>
             </div>
 
             <!-- Experience Section -->
@@ -1136,7 +1170,6 @@
         </p>
     </div>
 </footer>
-
 
     <script src="script.js"></script>
 </body>

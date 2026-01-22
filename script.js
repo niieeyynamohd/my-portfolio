@@ -186,7 +186,7 @@ function showSection(sectionType) {
         certificatesSection.classList.remove('hidden');
         certificatesSection.style.display = 'block';
         document.getElementById('certificatesBtn').className = 'section-control-btn px-6 py-3 rounded-full font-semibold transition-all border-2 border-orange-400 text-orange-400';
-        // Reset certificate filters to show all certificates
+        // Reset certificate filters to show all certificates with fade-up animation
         filterCertificates('all');
     } else if (sectionType === 'experience') {
         experienceSection.classList.remove('hidden');
@@ -235,7 +235,7 @@ function filterProjects(category) {
     });
 }
 
-// Certificate filter functionality
+// Certificate filter functionality - UPDATED FOR FADE-UP
 function filterCertificates(category) {
     // Update active button
     document.querySelectorAll('#certificatesSection .filter-btn').forEach(btn => {
@@ -248,30 +248,42 @@ function filterCertificates(category) {
     const gridContainer = document.getElementById('certificatesGrid');
     const allItems = document.querySelectorAll('#certificatesMarquee .marquee-item');
     
-    // Clear containers
+    // Always hide marquee and show grid
+    marqueeContainer.classList.add('hidden');
+    marqueeContainer.style.display = 'none';
+    gridContainer.classList.remove('hidden');
+    gridContainer.style.display = 'grid';
+    
+    // Clear the grid container
     gridContainer.innerHTML = '';
     
-    if (category === 'all') {
-        // Show marquee and hide grid
-        marqueeContainer.classList.remove('hidden');
-        marqueeContainer.style.display = 'block';
-        gridContainer.classList.add('hidden');
-        gridContainer.style.display = 'none';
-    } else {
-        // Hide marquee and show grid
-        marqueeContainer.classList.add('hidden');
-        marqueeContainer.style.display = 'none';
-        gridContainer.classList.remove('hidden');
-        gridContainer.style.display = 'grid';
-        
-        // Filter and add items to grid
-        allItems.forEach(item => {
-            if (item.dataset.category === category) {
-                const clone = item.cloneNode(true);
-                gridContainer.appendChild(clone);
-            }
+    // Filter and add items to grid with fade-up animation
+    let visibleIndex = 0;
+    allItems.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+            const clone = item.cloneNode(true);
+            // Add the fade-up animation class
+            clone.classList.add('certificate-fade-up');
+            // Set animation delay based on visible index
+            clone.style.animationDelay = `${visibleIndex * 0.2}s`;
+            visibleIndex++;
+            gridContainer.appendChild(clone);
+        }
+    });
+    
+    // Re-attach event listeners to the new certificate cards
+    attachCertificateEventListeners();
+}
+
+// Add this function to attach event listeners to certificate cards
+function attachCertificateEventListeners() {
+    const certificateCards = document.querySelectorAll('#certificatesGrid .marquee-item');
+    certificateCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const certType = this.dataset.certificateType;
+            showCertificateDetails(certType);
         });
-    }
+    });
 }
 
 // Function to show experience details
@@ -281,7 +293,7 @@ function showExperienceDetails(expType) {
 
 // Initialize marquee functionality when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    // Setup marquee hover events
+    // Setup marquee hover events (though marquee is now hidden)
     setupMarqueeHoverEvents();
 
     // Check for section parameter in URL
