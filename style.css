@@ -9,6 +9,100 @@
     text-align: justify;
 }
 
+/* Responsive Image Styles */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* For aspect ratio containers */
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+/* For better image scaling on different screens */
+@media (max-width: 768px) {
+    /* Adjust project cards for mobile */
+    .project-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    /* Adjust certificate cards for mobile */
+    .marquee-item {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for small screens */
+    .project-card {
+        max-width: 280px;
+    }
+    
+    .marquee-item {
+        width: 240px;
+    }
+}
+
+/* Video responsive styles */
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* For responsive video containers */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Certificate responsive styles */
+.certificate-card_image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Add these responsive styles for certificates */
+@media (max-width: 768px) {
+    .certificate-card {
+        min-width: 280px;
+        min-height: 180px;
+        max-width: 320px;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-card {
+        min-width: 240px;
+        min-height: 160px;
+        max-width: 280px;
+        max-height: 360px;
+    }
+}
+
 /* Animations */
 @keyframes sparkle {
     from { transform: translateX(0); }
@@ -650,16 +744,28 @@
 /* Projects Grid Styles */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2.5rem; /* Tambah gap antara kad */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
     justify-items: center;
 }
 
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
 .project-card {
     opacity: 0;
-    transform: translateY(50px); /* Sama seperti slide-up */
-    animation: slideUp 0.8s ease forwards; /* Guna slide-up animation */
+    transform: translateY(50px);
+    animation: slideUp 0.8s ease forwards;
 }
 
 /* Pastikan semua kad projek guna slide-up */
@@ -725,28 +831,12 @@
     margin: 0 auto;
 }
 
-.certificate-card_image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 10px;
-    box-sizing: border-box;
-}
-
 .certificate-card svg {
     width: 64px;
     height: 64px;
     fill: #f97316;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 4px 8px rgba(249, 115, 22, 0.3));
-}
-
-.certificate-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.4);
-    border-color: rgba(249, 115, 22, 0.6);
 }
 
 .certificate-card__content {
@@ -1558,11 +1648,6 @@ button.back-button:hover {
         backdrop-filter: none !important;
         border: none !important;
 }
-video {
-    max-width: 90%;
-    border-radius: 8px;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);  
-}
 
 /* Project card text justification */
 .project-description {
@@ -1627,4 +1712,15 @@ video {
     word-spacing: -0.05em;
     line-height: 1.6;
     margin-bottom: 1rem;
+}
+
+/* Make sure the buttons have proper hover effects */
+.project-card button[type="button"] {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-card button[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

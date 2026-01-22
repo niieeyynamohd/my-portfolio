@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Catalog - Amanina</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        /* Simple Catalog Styles */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .catalog-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            background: #1f2937;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            /* Remove fixed aspect ratio to allow natural image proportions */
+            height: auto;
+            min-height: 200px;
+            max-height: 400px;
+        }
+        
+        .catalog-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.3);
+        }
+        
+        .catalog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            /* Ensure image fills container while maintaining aspect ratio */
+            display: block;
+        }
+        
+        .catalog-item:hover .catalog-image {
+            transform: scale(1.1);
+        }
+        
+        .catalog-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 1.5rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .catalog-item:hover .catalog-overlay {
+            transform: translateY(0);
+        }
+        
+        .catalog-title {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .catalog-category {
+            color: #a78bfa;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ec4899, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-subtitle {
+            color: #9ca3af;
+            font-size: 1rem;
+        }
+        
+        /* Masonry-style grid for mixed aspect ratios */
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 1.5rem;
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Responsive Grid */
+        @media (max-width: 640px) {
+            .catalog-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            
+            .masonry-grid {
+                column-count: 2;
+                column-gap: 1rem;
+            }
+            
+            .catalog-item {
+                min-height: 150px;
+                max-height: 300px;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 768px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+        
+        /* Alternative layout option - uncomment to use masonry instead of grid */
+        /*
+        .catalog-grid {
+            display: block;
+        }
+        
+        .catalog-grid .catalog-item {
+            display: block;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+        */
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-purple-500/20">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold flex items-center">
+                    <span class="text-blue-400 animate-pulse" style="animation-duration: 2s;">N</span>
+                    <span class="text-purple-400 animate-pulse" style="animation-duration: 2s; animation-delay: 0.5s;">M</span>
+                </div>
+               <button onclick="goBack()" 
+                    class="border-2 text-purple-600 px-4 py-2 rounded-full transition-colors hover:bg-purple-600 hover:text-white" 
+                    style="border-color: purple;">
+                    ❮ Back
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12">
+        <!-- Header -->
+        <div class="section-header">
+            <h1 class="section-title">Design Catalog</h1>
+            <p class="section-subtitle">Collection of my creative design works</p>
+        </div>
+
+        <!-- Posters Section -->
+        <section class="catalog-container">
+            <h2 class="text-xl font-semibold text-purple-400 mb-4">Posters</h2>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <img src="image/poster1.jpg" alt="Poster Design 1" class="catalog-image" onerror="this.src='image/baca.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Tech Conference 2023</h3>
+                        <p class="catalog-category">Event Poster</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/poster2.jpg" alt="Poster Design 2" class="catalog-image" onerror="this.src='image/keklapis.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Summer Music Festival</h3>
+                        <p class="catalog-category">Event Poster</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/poster3.jpg" alt="Poster Design 3" class="catalog-image" onerror="this.src='image/apk.gif';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Art Exhibition</h3>
+                        <p class="catalog-category">Promotional</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/poster4.jpg" alt="Poster Design 4" class="catalog-image" onerror="this.src='image/school.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Food Festival</h3>
+                        <p class="catalog-category">Event Poster</p>
+                    </div>
+                </div>
+
+                <div class="catalog-item">
+                    <img src="image/poster5.jpg" alt="Poster Design 5" class="catalog-image" onerror="this.src='image/preloved.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Food Festival</h3>
+                        <p class="catalog-category">Event Poster</p>
+                    </div>
+                </div>
+
+                <div class="catalog-item">
+                    <img src="image/poster6.jpg" alt="Poster Design 4" class="catalog-image" onerror="this.src='image/maxim.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Food Festival</h3>
+                        <p class="catalog-category">Event Poster</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+         <!-- Event Newspapers Section -->
+        <section class="catalog-container">
+            <h2 class="text-xl font-semibold text-green-400 mb-4 mt-12">Event Newspapers</h2>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <img src="image/newspaper1.jpg" alt="Newspaper 1" class="catalog-image" onerror="this.src='image/newspp.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">University Festival Gazette</h3>
+                        <p class="catalog-category">Event Publication</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/newspaper2.jpg" alt="Newspaper 2" class="catalog-image" onerror="this.src='image/1.jpg';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Corporate Event Newsletter</h3>
+                        <p class="catalog-category">Newsletter</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/newspaper3.jpg" alt="Newspaper 3" class="catalog-image" onerror="this.src='image/2.jpg';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Sports Tournament Bulletin</h3>
+                        <p class="catalog-category">Event Bulletin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- UI/UX Designs Section -->
+        <section class="catalog-container">
+            <h2 class="text-xl font-semibold text-blue-400 mb-4 mt-12">Project Visuals</h2>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <img src="image/uiux1.jpg" alt="UI Design 1" class="catalog-image" onerror="this.src='image/uiux1.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Food Delivery App</h3>
+                        <p class="catalog-category">Mobile App</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/uiux2.jpg" alt="UI Design 2" class="catalog-image" onerror="this.src='image/uiux2.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Analytics Dashboard</h3>
+                        <p class="catalog-category">Web Interface</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/uiux3.jpg" alt="UI Design 3" class="catalog-image" onerror="this.src='image/uiux3.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">E-commerce Platform</h3>
+                        <p class="catalog-category">Web Design</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/uiux4.jpg" alt="UI Design 4" class="catalog-image" onerror="this.src='image/uiux4.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Social Media App</h3>
+                        <p class="catalog-category">Mobile App</p>
+                    </div>
+                </div>
+
+                <div class="catalog-item">
+                    <img src="image/uiux4.jpg" alt="UI Design 4" class="catalog-image" onerror="this.src='image/uiux5.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Social Media App</h3>
+                        <p class="catalog-category">Mobile App</p>
+                    </div>
+                </div>
+
+                <div class="catalog-item">
+                    <img src="image/uiux4.jpg" alt="UI Design 4" class="catalog-image" onerror="this.src='image/uiux7.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Social Media App</h3>
+                        <p class="catalog-category">Mobile App</p>
+                    </div>
+                </div>
+
+                <div class="catalog-item">
+                    <img src="image/uiux4.jpg" alt="UI Design 4" class="catalog-image" onerror="this.src='image/uiux8.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Social Media App</h3>
+                        <p class="catalog-category">Mobile App</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+        <!-- Interview Designs Section -->
+        <section class="catalog-container">
+            <h2 class="text-xl font-semibold text-yellow-400 mb-4 mt-12">Interview File Designs</h2>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <img src="image/interview1.jpg" alt="Interview 1" class="catalog-image" onerror="this.src='image/file.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Tech Interview Presentation</h3>
+                        <p class="catalog-category">Presentation</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/interview2.jpg" alt="Interview 2" class="catalog-image" onerror="this.src='image/file1.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Creative Portfolio Interview</h3>
+                        <p class="catalog-category">Portfolio Design</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/interview3.jpg" alt="Interview 3" class="catalog-image" onerror="this.src='image/file5.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Design Process Presentation</h3>
+                        <p class="catalog-category">Case Study</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Promotions Section -->
+        <section class="catalog-container">
+            <h2 class="text-xl font-semibold text-pink-400 mb-4 mt-12">Other</h2>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <img src="image/business1.jpg" alt="Business 1" class="catalog-image" onerror="this.src='image/kawen.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Product Launch Campaign</h3>
+                        <p class="catalog-category">Marketing</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/business2.jpg" alt="Business 2" class="catalog-image" onerror="this.src='image/kawen2.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Social Media Campaign</h3>
+                        <p class="catalog-category">Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/business3.jpg" alt="Business 3" class="catalog-image" onerror="this.src='image/POSTER.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Brand Identity Design</h3>
+                        <p class="catalog-category">Branding</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="image/business4.jpg" alt="Business 4" class="catalog-image" onerror="this.src='image/CUTE.png';">
+                    <div class="catalog-overlay">
+                        <h3 class="catalog-title">Sales Promotion Materials</h3>
+                        <p class="catalog-category">Promotional</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-800 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">© 2025 Amanina Majdiah Mohamad Portfolio.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Go back function
+        function goBack() {
+            window.history.back();
+        }
+
+        // Simple lightbox for images
+        const catalogItems = document.querySelectorAll('.catalog-item');
+        
+        catalogItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('.catalog-image');
+                const lightbox = document.createElement('div');
+                lightbox.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                    cursor: pointer;
+                `;
+                
+                const lightboxImg = document.createElement('img');
+                lightboxImg.src = img.src;
+                lightboxImg.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    object-fit: contain;
+                `;
+                
+                lightbox.appendChild(lightboxImg);
+                document.body.appendChild(lightbox);
+                document.body.style.overflow = 'hidden';
+                
+                lightbox.addEventListener('click', () => {
+                    document.body.removeChild(lightbox);
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        });
+
+        // Optional: Add Masonry layout for better mixed aspect ratio display
+        // Uncomment this function and the masonry CSS above if you prefer masonry layout
+        /*
+        function initMasonryLayout() {
+            const grids = document.querySelectorAll('.catalog-grid');
+            grids.forEach(grid => {
+                grid.classList.add('masonry-grid');
+                const items = grid.querySelectorAll('.catalog-item');
+                items.forEach(item => {
+                    item.classList.add('masonry-item');
+                });
+            });
+        }
+        
+        // Initialize masonry on load
+        window.addEventListener('load', initMasonryLayout);
+        */
+    </script>
+</body>
+</html>

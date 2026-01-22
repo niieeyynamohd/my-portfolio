@@ -312,14 +312,21 @@ document.addEventListener('DOMContentLoaded', function() {
         showSection('projects');
     }
 
-    // Add event delegation for project cards
+    // Add event delegation for project cards - UPDATED VERSION
     document.addEventListener('click', function(e) {
-        // Find the closest project card
-        let projectCard = e.target.closest('.project-card[data-project-id]');
-        if (projectCard) {
-            const projectId = projectCard.dataset.projectId;
-            window.location.href = `project.html?type=${projectId}`;
-            return;
+        // Only handle clicks on project detail buttons
+        if (e.target.matches('button[type="button"]') && e.target.textContent.includes('View Details')) {
+            let projectCard = e.target.closest('.project-card[data-project-id]');
+            if (projectCard) {
+                const projectId = projectCard.dataset.projectId;
+                window.location.href = `project.html?type=${projectId}`;
+                return;
+            }
+        }
+        
+        // Handle direct link on design project (if needed)
+        if (e.target.closest('a[href="design.html"]')) {
+            return; // Let the default link behavior handle this
         }
         
         // Find the closest experience card
