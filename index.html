@@ -132,7 +132,7 @@
                 <div class="slide-up" style="animation-delay: 0.2s;">
                 <div class="relative">
                 <!-- Professional Portrait Container -->
-                <div class="w-80 h-80 rounded-full mx-auto relative overflow-hidden shadow-2xl border-4 border-purple-400/30 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600">
+                <div class="w-80 h-80 rounded-full mx-auto relative overflow-hidden shadow-2xl border-4 border-purple-400/30 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 about-image-container">
                 <!-- Galaxy Animation Background -->
                 <div class="absolute inset-0 galaxy-swirl"></div>
 
@@ -331,8 +331,6 @@
                                 </div>
                                 <span class="text-sm text-gray-300">Kotlin</span>
                             </div>
-
-    
                         </div>
                     </div>
                 </div>
@@ -342,7 +340,7 @@
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-gray-900 relative overflow-hidden">
-        <!-- Cosmic background -->
+        
         <div class="absolute inset-0 opacity-20">
             <div class="stars" style="animation-duration: 60s;"></div>
         </div>
@@ -481,6 +479,8 @@
                                     <span class="text-blue-400 font-medium border-b-2 border-blue-400">Canva</span>
                                     <span class="text-gray-400 mx-2">|</span>
                                     <span class="text-purple-400 font-medium border-b-2 border-purple-400">Adobe</span>
+                                    <span class="text-gray-400 mx-2">|</span>
+                                    <span class="text-pink-400 font-medium border-b-2 border-pink-400">Figma</span>
                                     
                                 </div>
 
@@ -492,7 +492,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <!-- Staff Exit Clearance System -->
                     <div class="project-card" data-category="web" data-project-id="staff-clearance" style="animation-delay: 0.2s;">
@@ -742,12 +741,14 @@
                 </div>
                 
                 <!-- Certificates Grid (Primary Display Method) -->
-                <div id="certificatesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="certificatesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Certificate items will be populated here by JavaScript -->
+                </div>
                 
                 <!-- Marquee Container (Hidden by default) -->
                 <div class="marquee-container hidden" id="certificatesMarqueeContainer">
                     <div class="marquee-content certificates-marquee" id="certificatesMarquee">
-                      <div class="marquee-item" data-category="achievement" data-certificate-type="award">
+                        <div class="marquee-item" data-category="achievement" data-certificate-type="award">
                             <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('award')">
                                  <img src="image/award.JPG" class="certificate-card_image" alt="award">
                                 <div class="certificate-card__content">
@@ -755,43 +756,26 @@
                                     <p class="certificate-card__issuer">Pertandingan Inovasi Antara Asasi Malaysia (PITRAM 2025)</p>
                                     <div class="certificate-card__details">
                                         <p class="certificate-card__date">22 - 23 February 2025</p>
-  
                                     </div>
                                     <p class="certificate-card__description"> This award was presented for my final year project, "Interactive Approach to Preserve the Kadazandusun Language Through Gamification." The project involved developing an innovative application that uses gamification to help preserve a local language. </p>
                                 </div>
                             </div>
                         </div>
-                            <div class="marquee-item" data-category="achievement" data-certificate-type="award">
-                                <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('award')">
-                                    <img src="image/dekan2.jpeg" class="certificate-card_image" alt="Dean's Award UMS">
-                                    <div class="certificate-card__content">
-                                        <p class="certificate-card__title">DEAN'S LIST AWARD</p>
-                                        <p class="certificate-card__issuer">Universiti Malaysia Sabah (UMS)</p>
-                                        <div class="certificate-card__details">
-                                            <p class="certificate-card__date">Semester 2, 2024/2025 Session</p>
-                                        </div>
-                                        <p class="certificate-card__description"> 
-                                            Awarded for achieving outstanding academic excellence with a perfect GPA (PNGS) of 4.00. Currently pursuing a Bachelor's degree in Software Engineering (Kejuruteraan Perisian) at the Faculty of Computing and Informatics.
-                                        </p>
+                        <div class="marquee-item" data-category="achievement" data-certificate-type="award">
+                            <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('award')">
+                                <img src="image/dekan2.jpeg" class="certificate-card_image" alt="Dean's Award UMS">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">DEAN'S LIST AWARD</p>
+                                    <p class="certificate-card__issuer">Universiti Malaysia Sabah (UMS)</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">Semester 2, 2024/2025 Session</p>
                                     </div>
+                                    <p class="certificate-card__description"> 
+                                        Awarded for achieving outstanding academic excellence with a perfect GPA (PNGS) of 4.00. Currently pursuing a Bachelor's degree in Software Engineering (Kejuruteraan Perisian) at the Faculty of Computing and Informatics.
+                                    </p>
                                 </div>
                             </div>
-                                <div class="marquee-item" data-category="achievement" data-certificate-type="award">
-                                    <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('award')">
-                                        <img src="image/dekan2.jpeg" class="certificate-card_image" alt="Dean's Award UMS">
-                                        <div class="certificate-card__content">
-                                            <p class="certificate-card__title">DEAN'S AWARD (ANUGERAH DEKAN)</p>
-                                            <p class="certificate-card__issuer">Universiti Malaysia Sabah (UMS)</p>
-                                            <div class="certificate-card__details">
-                                                <p class="certificate-card__date">Semester 2, 2024/2025 Session</p>
-                                            </div>
-                                            <p class="certificate-card__description">
-                                                Awarded for outstanding academic achievement in Software Engineering (Kejuruteraan Perisian) within the Faculty of Computing and Informatics, maintaining a perfect GPA (PNGS) of 4.00.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
+                        </div>
                         <div class="marquee-item" data-category="professional" data-certificate-type="degree">
                             <div class="certificate-card certificate-card--pink" onclick="showCertificateDetails('program')">
                                 <img src="image/degree.jpeg" class="certificate-card_image" alt="degree">
@@ -805,8 +789,7 @@
                                 </div>
                             </div>
                         </div>
-
-                         <div class="marquee-item" data-category="professional" data-certificate-type="diploma">
+                        <div class="marquee-item" data-category="professional" data-certificate-type="diploma">
                             <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('diploma')">
                                  <img src="image/diploma.png" class="certificate-card_image" alt="diploma">
                                 <div class="certificate-card__content">
@@ -819,24 +802,21 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="marquee-item" data-category="professional" data-certificate-type="cisco">
-                    <div class="certificate-card certificate-card--purple" onclick="showCertificateDetails('cisco')">
-                        <img src="image/IOTCISCO.png" class="certificate-card_image" alt="Introduction to IoT and Digital Transformation"> 
-                        <div class="certificate-card__content">
-                            <p class="certificate-card__title">Introduction to IoT and Digital Transformation</p>
-                            <p class="certificate-card__issuer">Cisco Networking Academy</p>
-                            <div class="certificate-card__details">
-                                <p class="certificate-card__date">28 September 2025</p>
+                            <div class="certificate-card certificate-card--purple" onclick="showCertificateDetails('cisco')">
+                                <img src="image/IOTCISCO.png" class="certificate-card_image" alt="Introduction to IoT and Digital Transformation"> 
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Introduction to IoT and Digital Transformation</p>
+                                    <p class="certificate-card__issuer">Cisco Networking Academy</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">28 September 2025</p>
+                                    </div>
+                                    <p class="certificate-card__description">
+                                        Successfully completed the Cisco Networking Academy program course, which covers the fundamentals of the Internet of Things (IoT) and how it drives digital transformation across various industries.
+                                    </p>
+                                </div>
                             </div>
-                            <p class="certificate-card__description">
-                                Successfully completed the Cisco Networking Academy program course, which covers the fundamentals of the Internet of Things (IoT) and how it drives digital transformation across various industries.
-                            </p>
                         </div>
-                    </div>
-                </div>
-
-                        
                         <div class="marquee-item" data-category="professional" data-certificate-type="cisco">
                             <div class="certificate-card certificate-card--purple" onclick="showCertificateDetails('cisco')">
                                <img src="image/cybersecurity.png" class="certificate-card_image" alt="cybersecurity"> 
@@ -850,7 +830,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="marquee-item" data-category="professional" data-certificate-type="gemini">
                             <div class="certificate-card certificate-card--blue" onclick="showCertificateDetails('gemini')">
                                 <img src="image/gemini.png" class="certificate-card_image" alt="Gemini Certified Student"> 
@@ -865,9 +844,8 @@
                                     </p>
                                 </div>
                             </div>
-</div>
-
-                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                        </div>
+                        <div class="marquee-item" data-category="involvement" data-certificate-type="program">
                             <div class="certificate-card certificate-card--pink" onclick="showCertificateDetails('program')">
                                 <img src="image/program3.png" class="certificate-card_image" alt="program3">
                                 <div class="certificate-card__content">
@@ -880,8 +858,7 @@
                                 </div>
                             </div>
                         </div>
-
-                          <div class="marquee-item" data-category="professional" data-certificate-type="elatih">
+                        <div class="marquee-item" data-category="professional" data-certificate-type="elatih">
                             <div class="certificate-card certificate-card--green" onclick="showCertificateDetails('elatih')">
                                  <img src="image/learn2.png" class="certificate-card_image" alt="elatih3"> 
                                 <div class="certificate-card__content">
@@ -894,35 +871,32 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="marquee-item" data-category="professional" data-certificate-type="elatih">
-                                <div class="certificate-card certificate-card--rose" onclick="showCertificateDetails('elatih')">
-                                    <img src="image/learn.png" class="certificate-card_image" alt="elatih1">
-                                    <div class="certificate-card__content">
-                                        <p class="certificate-card__title">Program No Body-Shaming, Respect Each Other</p>
-                                        <p class="certificate-card__issuer">Universiti Malaysia Sabah</p>
-                                        <div class="certificate-card__details">
-                                            <p class="certificate-card__date">21 May 2022</p>
-                                        </div>
-                                        <p class="certificate-card__description">A certificate of participation for a program aimed at promoting body positivity and mutual respect.</p>
+                            <div class="certificate-card certificate-card--rose" onclick="showCertificateDetails('elatih')">
+                                <img src="image/learn.png" class="certificate-card_image" alt="elatih1">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Program No Body-Shaming, Respect Each Other</p>
+                                    <p class="certificate-card__issuer">Universiti Malaysia Sabah</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">21 May 2022</p>
                                     </div>
+                                    <p class="certificate-card__description">A certificate of participation for a program aimed at promoting body positivity and mutual respect.</p>
                                 </div>
                             </div>
-                      
-                            <div class="marquee-item" data-category="professional" data-certificate-type="elatih">
-                                <div class="certificate-card certificate-card--indigo" onclick="showCertificateDetails('elatih')">
-                                    <img src="image/learn1.png" class="certificate-card_image" alt="elatih2">
-                                    <div class="certificate-card__content">
-                                        <p class="certificate-card__title">Cybersecurity Essentials</p>
-                                        <p class="certificate-card__issuer">Cisco Networking Academy and UMS</p>
-                                        <div class="certificate-card__details">
-                                            <p class="certificate-card__date">25 January 2025</p>
-                                        </div>
-                                        <p class="certificate-card__description">A certificate for completing the Cybersecurity Essentials course, which provides foundational knowledge in cybersecurity.</p>
+                        </div>
+                        <div class="marquee-item" data-category="professional" data-certificate-type="elatih">
+                            <div class="certificate-card certificate-card--indigo" onclick="showCertificateDetails('elatih')">
+                                <img src="image/learn1.png" class="certificate-card_image" alt="elatih2">
+                                <div class="certificate-card__content">
+                                    <p class="certificate-card__title">Cybersecurity Essentials</p>
+                                    <p class="certificate-card__issuer">Cisco Networking Academy and UMS</p>
+                                    <div class="certificate-card__details">
+                                        <p class="certificate-card__date">25 January 2025</p>
                                     </div>
+                                    <p class="certificate-card__description">A certificate for completing the Cybersecurity Essentials course, which provides foundational knowledge in cybersecurity.</p>
                                 </div>
                             </div>
-
+                        </div>
                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
                             <div class="certificate-card certificate-card--cyan" onclick="showCertificateDetails('program')">
                                <img src="image/program.png" class="certificate-card_image" alt="program">   
@@ -936,8 +910,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        
                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
                             <div class="certificate-card certificate-card--teal" onclick="showCertificateDetails('program')">
                                  <img src="image/program1.png" class="certificate-card_image" alt="program1"> 
@@ -951,7 +923,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
                             <div class="certificate-card certificate-card--yellow" onclick="showCertificateDetails('program')">
                                 <img src="image/program2.png" class="certificate-card_image" alt="program2">
@@ -965,7 +936,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
                             <div class="certificate-card certificate-card--indigo" onclick="showCertificateDetails('program')">
                                 <img src="image/program4.png" class="certificate-card_image" alt="program4">
@@ -978,9 +948,8 @@
                                     <p class="certificate-card__description">A certificate for participation in a program designed to enhance communication and soft skills. This demonstrates proactive effort in personal and professional development.</p>
                                 </div>
                             </div>
-                         </div>
-
-                         <div class="marquee-item" data-category="involvement" data-certificate-type="program">
+                        </div>
+                        <div class="marquee-item" data-category="involvement" data-certificate-type="program">
                             <div class="certificate-card certificate-card--lime" onclick="showCertificateDetails('program')">
                                 <img src="image/program5.png" class="certificate-card_image" alt="program5">
                                 <div class="certificate-card__content">
@@ -993,8 +962,7 @@
                                 </div>
                             </div>
                         </div>
-
-                         <div class="marquee-item" data-category="professional" data-certificate-type="program">
+                        <div class="marquee-item" data-category="professional" data-certificate-type="program">
                             <div class="certificate-card certificate-card--red" onclick="showCertificateDetails('program')">
                                  <img src="image/sulam.png" class="certificate-card_image" alt="programajk"> 
                                 <div class="certificate-card__content">
@@ -1007,103 +975,95 @@
                                 </div>
                             </div>
                         </div>
-
-                        </div>
                     </div>
                 </div>
-                
             </div>
 
             <!-- Experience Section -->
-                            <!-- Experience Section -->
-                            <div class="mb-16 hidden" id="experienceSection">
-                                <h3 class="text-2xl font-semibold mb-8 text-center text-blue-400">💼 Professional Experience</h3>
-                                
-                                <!-- Experience Cards Container (Centered) -->
-                                <div class="flex justify-center">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl" id="experienceGrid">
-
-                                        <!-- Diploma Internship Experience Card -->
-                                        <div class="experience-card" data-category="itsupport" onclick="showExperienceDetails('itsupport')">
-                                            <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.3s;">
-                                                <div class="p-6">
-                                                    <div class="flex items-center mb-4">
-                                                        <div class="w-12 h-12 rounded-full bg-orange-600/20 flex items-center justify-center mr-4">
-                                                            <span class="text-xl">🎓</span>
-                                                        </div>
-                                                        <div>
-                                                            <h4 class="text-xl font-semibold text-amber-400">IT Support</h4>
-                                                            <p class="text-blue-400">Sarawak Skills Kuching</p>
-                                                        </div>
-                                                    </div>
-                                                    <p class="text-green-400 mb-4">1 October 2025 – 3 November 2025</p>
-                                                    <p class="text-gray-300 mb-4">IT support for Sarawak Skills, handling AI audio, system testing, and event support. </p>
-                                                    <div class="flex flex-wrap gap-2 mb-4">
-                                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Generated AI Clone</span>
-                                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Test AI System</span>
-                                                    </div>
-                                                    <button class="text-pink-400 hover:text-pink-300 font-medium flex items-center">
-                                                        View Details <span class="ml-2">→</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+            <div class="mb-16 hidden" id="experienceSection">
+                <h3 class="text-2xl font-semibold mb-8 text-center text-blue-400">💼 Professional Experience</h3>
+                
+                <!-- Experience Cards Container (Centered) -->
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl" id="experienceGrid">
+                        <!-- Diploma Internship Experience Card -->
+                        <div class="experience-card" data-category="itsupport" onclick="showExperienceDetails('itsupport')">
+                            <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.3s;">
+                                <div class="p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 rounded-full bg-orange-600/20 flex items-center justify-center mr-4">
+                                            <span class="text-xl">🎓</span>
                                         </div>
-
-                                        <!-- Internship Experience Card -->
-                                        <div class="experience-card" data-category="internship" onclick="showExperienceDetails('internship')">
-                                            <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.1s;">
-                                                <div class="p-6">
-                                                    <div class="flex items-center mb-4">
-                                                        <div class="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center mr-4">
-                                                            <span class="text-xl">💼</span>
-                                                        </div>
-                                                        <div>
-                                                            <h4 class="text-xl font-semibold text-purple-400">IT Internship</h4>
-                                                            <p class="text-pink-400">Sarawak Skills Kuching Sarawak</p>
-                                                        </div>
-                                                    </div>
-                                                    <p class="text-blue-400 mb-4">17 March 2025 - 29 August 2025</p>
-                                                    <p class="text-gray-300 mb-4">Assisted in the design, coding, testing, and analysis of software applications.</p>
-                                                    <div class="flex flex-wrap gap-2 mb-4">
-                                                        <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">AppWizard</span>
-                                                        <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">Bootstrap</span>
-                                                        <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">Angular</span>
-                                                    </div>
-                                                    <button class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                                                        View Details <span class="ml-2">→</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Diploma Internship Experience Card -->
-                                        <div class="experience-card" data-category="internship" onclick="showExperienceDetails('intern')">
-                                            <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.3s;">
-                                                <div class="p-6">
-                                                    <div class="flex items-center mb-4">
-                                                        <div class="w-12 h-12 rounded-full bg-pink-600/20 flex items-center justify-center mr-4">
-                                                            <span class="text-xl">🖥️</span>
-                                                        </div>
-                                                        <div>
-                                                            <h4 class="text-xl font-semibold text-pink-400">Diploma Internship – IT Support</h4>
-                                                            <p class="text-blue-400">CENTEXS Sarawak</p>
-                                                        </div>
-                                                    </div>
-                                                    <p class="text-green-400 mb-4">9 December 2019 – 17 March 2020</p>
-                                                    <p class="text-gray-300 mb-4">IT Support within the HR and Admin Unit, assisting in both technical and administrative tasks.</p>
-                                                    <div class="flex flex-wrap gap-2 mb-4">
-                                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Microsoft Office</span>
-                                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Troubleshooting</span>
-                                                    </div>
-                                                    <button class="text-pink-400 hover:text-pink-300 font-medium flex items-center">
-                                                        View Details <span class="ml-2">→</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-amber-400">IT Support</h4>
+                                            <p class="text-blue-400">Sarawak Skills Kuching</p>
                                         </div>
                                     </div>
+                                    <p class="text-green-400 mb-4">1 October 2025 – 3 November 2025</p>
+                                    <p class="text-gray-300 mb-4">IT support for Sarawak Skills, handling AI audio, system testing, and event support. </p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Generated AI Clone</span>
+                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Test AI System</span>
+                                    </div>
+                                    <button class="text-pink-400 hover:text-pink-300 font-medium flex items-center">
+                                        View Details <span class="ml-2">→</span>
+                                    </button>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Internship Experience Card -->
+                        <div class="experience-card" data-category="internship" onclick="showExperienceDetails('internship')">
+                            <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.1s;">
+                                <div class="p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center mr-4">
+                                            <span class="text-xl">💼</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-purple-400">IT Internship</h4>
+                                            <p class="text-pink-400">Sarawak Skills Kuching Sarawak</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-blue-400 mb-4">17 March 2025 - 29 August 2025</p>
+                                    <p class="text-gray-300 mb-4">Assisted in the design, coding, testing, and analysis of software applications.</p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">AppWizard</span>
+                                        <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">Bootstrap</span>
+                                        <span class="px-2 py-1 bg-purple-600/30 rounded-full text-xs">Angular</span>
+                                    </div>
+                                    <button class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                                        View Details <span class="ml-2">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diploma Internship Experience Card -->
+                        <div class="experience-card" data-category="internship" onclick="showExperienceDetails('intern')">
+                            <div class="slide-up bg-gray-800/80 backdrop-blur-md rounded-2xl border border-purple-500/20 overflow-hidden card-hover" style="animation-delay: 0.3s;">
+                                <div class="p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 rounded-full bg-pink-600/20 flex items-center justify-center mr-4">
+                                            <span class="text-xl">🖥️</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold text-pink-400">Diploma Internship – IT Support</h4>
+                                            <p class="text-blue-400">CENTEXS Sarawak</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-green-400 mb-4">9 December 2019 – 17 March 2020</p>
+                                    <p class="text-gray-300 mb-4">IT Support within the HR and Admin Unit, assisting in both technical and administrative tasks.</p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Microsoft Office</span>
+                                        <span class="px-2 py-1 bg-pink-600/30 rounded-full text-xs">Troubleshooting</span>
+                                    </div>
+                                    <button class="text-pink-400 hover:text-pink-300 font-medium flex items-center">
+                                        View Details <span class="ml-2">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,246 @@
     text-align: justify;
 }
 
+/* Mobile Spacing Adjustments - For Smart Phones (OPPO, Samsung, iPhone 7-17) */
+@media (max-width: 480px) {
+    /* General font size reduction */
+    body {
+        font-size: 14px !important;
+    }
+    
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    h4 {
+        font-size: 1.1rem !important;
+    }
+    
+    h5 {
+        font-size: 1rem !important;
+    }
+    
+    p {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Reduce padding and margins for mobile - MORE AGGRESSIVE */
+    .mb-6 {
+        margin-bottom: 0.5rem !important; /* Kurangkan lagi dari 1rem ke 0.5rem */
+    }
+    
+    .mb-8 {
+        margin-bottom: 0.75rem !important; /* Kurangkan lagi dari 1.5rem ke 0.75rem */
+    }
+    
+    .mb-4 {
+        margin-bottom: 0.5rem !important; /* Kurangkan lagi dari 0.75rem ke 0.5rem */
+    }
+    
+    .mb-12 {
+        margin-bottom: 1rem !important; /* Kurangkan dari 3rem ke 1rem */
+    }
+    
+    .mb-16 {
+        margin-bottom: 1.5rem !important; /* Kurangkan dari 4rem ke 1.5rem */
+    }
+    
+    .p-6 {
+        padding: 0.75rem !important; /* Kurangkan lagi dari 1rem ke 0.75rem */
+    }
+    
+    .p-8 {
+        padding: 1rem !important; /* Kurangkan lagi dari 1.5rem ke 1rem */
+    }
+    
+    .px-6 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    .py-4 {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    .py-20 {
+        padding-top: 2rem !important; /* Kurangkan lagi dari 3rem ke 2rem */
+        padding-bottom: 2rem !important;
+    }
+    
+    .gap-8 {
+        gap: 1rem !important; /* Kurangkan lagi dari 1.5rem ke 1rem */
+    }
+    
+    .gap-12 {
+        gap: 1.5rem !important; /* Kurangkan lagi dari 2rem ke 1.5rem */
+    }
+    
+    .gap-4 {
+        gap: 0.5rem !important; /* Kurangkan dari 1rem ke 0.5rem */
+    }
+    
+    /* Certificate Grid - 2 per row on mobile */
+    #certificatesGrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+    
+    /* Certificate card adjustments for mobile */
+    .certificate-card {
+        min-width: 150px !important;
+        min-height: 100px !important;
+        max-width: 180px !important;
+        max-height: 240px !important;
+        border-radius: 8px !important;
+        margin: 0 auto 0.5rem !important;
+    }
+    
+    .certificate-card_image {
+        padding: 4px !important;
+    }
+    
+    .certificate-card__content {
+        padding: 8px !important;
+    }
+    
+    .certificate-card__title {
+        font-size: 12px !important;
+        margin-bottom: 2px !important;
+        line-height: 1.0 !important;
+    }
+    
+    .certificate-card__issuer {
+        font-size: 9px !important;
+        margin-bottom: 4px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .certificate-card__details {
+        padding: 2px !important;
+        margin-bottom: 4px !important;
+        border-radius: 3px !important;
+    }
+    
+    .certificate-card__date,
+    .certificate-card__validity,
+    .certificate-card__id {
+        font-size: 7px !important;
+        margin: 0.5px 0 !important;
+    }
+    
+    .certificate-card__description {
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* Image adjustments for mobile */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+    
+    .aspect-video {
+        aspect-ratio: 16/9 !important;
+        height: auto !important;
+    }
+    
+    /* Project card adjustments for mobile */
+    .project-card {
+        width: 100% !important;
+        max-width: 280px !important;
+    }
+    
+    /* About section image adjustments */
+    .about-image-container {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    
+    .about-image-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    /* Navigation adjustments */
+    nav {
+        padding: 0.25rem 0.5rem !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero .mb-6 {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .hero .mb-8 {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Section title adjustments */
+    h2.mb-16 {
+        margin-bottom: 1rem !important;
+    }
+    
+    h3.mb-8 {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* Grid gap adjustments */
+    .grid.gap-12 {
+        gap: 1rem !important;
+    }
+    
+    /* Button adjustments */
+    button.px-8.py-4 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    
+    /* Filter button adjustments */
+    .filter-btn {
+        margin: 0 0.1rem !important;
+        width: 4.5rem !important;
+        height: 1.6rem !important;
+    }
+    
+    /* Project card padding adjustments */
+    .project-card .p-6 {
+        padding: 0.75rem !important;
+    }
+    
+    /* Experience card padding adjustments */
+    .experience-card .p-6 {
+        padding: 0.75rem !important;
+    }
+    
+    /* Skills section adjustments */
+    .skill-icon-item {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* Card padding adjustments */
+    .bg-gray-900\/80.p-8 {
+        padding: 0.75rem !important;
+    }
+    
+    /* Form spacing adjustments */
+    .space-y-6 > * + * {
+        margin-top: 0.75rem !important;
+    }
+}
+
 /* Responsive Image Styles */
 .responsive-img {
     max-width: 100%;
@@ -80,9 +320,7 @@ video {
     animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Certificate Card Responsive Styles - Enhanced for Mobile */
-
-/* Base certificate card styles */
+/* Certificate Card Flip Animation - Click Based */
 .certificate-card {
     position: relative;
     width: auto;
@@ -103,9 +341,26 @@ video {
     cursor: pointer;
     border: 2px solid rgba(249, 115, 22, 0.4);
     margin: 0 auto;
+    transform-style: preserve-3d;
 }
 
-/* Certificate card image styles */
+/* Remove hover effect and use click-based flip */
+.certificate-card:hover {
+    transform: rotateY(0deg) scale(1);
+}
+
+.certificate-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.certificate-card.flipped .certificate-card__content {
+    transform: rotateX(0deg);
+}
+
+.certificate-card.flipped .certificate-card_image {
+    transform: scale(0) rotateY(180deg);
+}
+
 .certificate-card_image {
     width: 100%;
     height: 100%;
@@ -114,9 +369,10 @@ video {
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     padding: 10px;
     box-sizing: border-box;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
-/* Certificate card content styles */
 .certificate-card__content {
     position: absolute;
     top: 0;
@@ -132,6 +388,8 @@ video {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
 .certificate-card__title {
@@ -184,10 +442,10 @@ video {
 /* Mobile screens - up to 480px */
 @media (max-width: 480px) {
     .certificate-card {
-        min-width: 200px;
+        min-width: 150px;
         min-height: 120px;
-        max-width: 240px;
-        max-height: 300px;
+        max-width: 180px;
+        max-height: 240px;
         border-radius: 8px;
         margin: 0 auto 0.75rem;
     }
@@ -198,6 +456,11 @@ video {
     
     .certificate-card__content {
         padding: 10px;
+        transform: rotateY(-180deg); /* Changed for better flip effect on mobile */
+    }
+    
+    .certificate-card.flipped {
+        transform: rotateY(180deg);
     }
     
     .certificate-card__title {
@@ -231,6 +494,46 @@ video {
     }
 }
 
+/* Add visual feedback for clickable certificates */
+.certificate-card:not(.flipped):hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+}
+
+.certificate-card.flipped:hover {
+    transform: rotateY(180deg) scale(1.02);
+}
+
+/* Add instruction hint */
+.certificate-card::after {
+    content: 'Click to flip';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.certificate-card:not(.flipped):hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .certificate-card::after {
+        font-size: 10px;
+        padding: 2px 6px;
+        bottom: 5px;
+        right: 5px;
+    }
+}
+
 /* Certificate Grid Responsive Adjustments */
 #certificatesGrid {
     display: grid;
@@ -248,7 +551,7 @@ video {
 /* Mobile grid adjustment */
 @media (max-width: 480px) {
     #certificatesGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
         padding: 0 1rem;
     }
@@ -1633,81 +1936,6 @@ button.back-button:hover {
     }
 }
 
-/* Responsive Styles */
-@media (max-width: 480px) {
-    /* General responsive styles */
-    body {
-        font-size: 14px;
-    }
-    
-    /* Navigation responsive */
-    nav {
-        padding: 0.5rem 1rem;
-    }
-    
-    /* Hero section responsive */
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    /* About section responsive */
-    .about-image {
-        width: 200px;
-        height: 200px;
-    }
-    
-    /* Skills section responsive */
-    .skill-icon-item {
-        margin-bottom: 1rem;
-    }
-    
-    /* Projects section responsive */
-    .project-card {
-        width: 240px;
-    }
-    
-    #projectsGrid, #certificatesGrid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Filter buttons responsive */
-    .filter-btn {
-        width: 5rem;
-        height: 1.8rem;
-        margin: 0 0.1rem;
-    }
-    
-    .filter-btn strong {
-        font-size: 7px;
-        letter-spacing: 0.5px;
-    }
-    
-    /* Contact section responsive */
-    .contact-form {
-        padding: 1rem;
-    }
-    
-    /* Experience section responsive */
-    .experience-item {
-        width: 240px;
-    }
-    
-    /* Experience cards responsive */
-    #experienceGrid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.bg-gray-800\/80.backdrop-blur-md.rounded-full.p-2.border.border-purple-500\/20 {
-        background-color: transparent !important;
-        backdrop-filter: none !important;
-        border: none !important;
-}
-
 /* Project card text justification */
 .project-description {
     text-align: justify !important;
@@ -1783,138 +2011,9 @@ button.back-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-/* Mobile Spacing Adjustments - For Smart Phones (OPPO, Samsung, iPhone 7-17) */
-@media (max-width: 480px) {
-    /* Reduce padding and margins for mobile - MORE AGGRESSIVE */
-    .mb-6 {
-        margin-bottom: 0.5rem !important; /* Kurangkan lagi dari 1rem ke 0.5rem */
-    }
-    
-    .mb-8 {
-        margin-bottom: 0.75rem !important; /* Kurangkan lagi dari 1.5rem ke 0.75rem */
-    }
-    
-    .mb-4 {
-        margin-bottom: 0.5rem !important; /* Kurangkan lagi dari 0.75rem ke 0.5rem */
-    }
-    
-    .mb-12 {
-        margin-bottom: 1rem !important; /* Kurangkan dari 3rem ke 1rem */
-    }
-    
-    .mb-16 {
-        margin-bottom: 1.5rem !important; /* Kurangkan dari 4rem ke 1.5rem */
-    }
-    
-    .p-6 {
-        padding: 0.75rem !important; /* Kurangkan lagi dari 1rem ke 0.75rem */
-    }
-    
-    .p-8 {
-        padding: 1rem !important; /* Kurangkan lagi dari 1.5rem ke 1rem */
-    }
-    
-    .px-6 {
-        padding-left: 0.75rem !important;
-        padding-right: 0.75rem !important;
-    }
-    
-    .py-4 {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
-    }
-    
-    .py-20 {
-        padding-top: 2rem !important; /* Kurangkan lagi dari 3rem ke 2rem */
-        padding-bottom: 2rem !important;
-    }
-    
-    .gap-8 {
-        gap: 1rem !important; /* Kurangkan lagi dari 1.5rem ke 1rem */
-    }
-    
-    .gap-12 {
-        gap: 1.5rem !important; /* Kurangkan lagi dari 2rem ke 1.5rem */
-    }
-    
-    .gap-4 {
-        gap: 0.5rem !important; /* Kurangkan dari 1rem ke 0.5rem */
-    }
-    
-    /* Specific adjustments for About section */
-    #about .mb-6 {
-        margin-bottom: 0.5rem !important;
-    }
-    
-    #about .leading-relaxed {
-        line-height: 1.4 !important; /* Kurangkan lagi line-height */
-    }
-    
-    /* Reduce spacing in skills section */
-    .skill-icon-item {
-        margin-bottom: 0.5rem !important;
-    }
-    
-    /* Reduce card padding */
-    .bg-gray-900\/80.p-8 {
-        padding: 0.75rem !important;
-    }
-    
-    /* Reduce form spacing */
-    .space-y-6 > * + * {
-        margin-top: 0.75rem !important;
-    }
-    
-    /* Reduce navigation padding */
-    nav {
-        padding: 0.25rem 0.5rem !important;
-    }
-    
-    /* Reduce hero section spacing */
-    .hero .mb-6 {
-        margin-bottom: 0.75rem !important;
-    }
-    
-    .hero .mb-8 {
-        margin-bottom: 1rem !important;
-    }
-    
-    /* Reduce section titles spacing */
-    h2.mb-16 {
-        margin-bottom: 1rem !important;
-    }
-    
-    h3.mb-8 {
-        margin-bottom: 0.75rem !important;
-    }
-    
-    /* Reduce grid gaps */
-    .grid.gap-12 {
-        gap: 1rem !important;
-    }
-    
-    /* Reduce button padding */
-    button.px-8.py-4 {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        padding-top: 0.75rem !important;
-        padding-bottom: 0.75rem !important;
-    }
-    
-    /* Reduce filter button spacing */
-    .filter-btn {
-        margin: 0 0.1rem !important;
-        width: 4.5rem !important;
-        height: 1.6rem !important;
-    }
-    
-    /* Reduce project card spacing */
-    .project-card .p-6 {
-        padding: 0.75rem !important;
-    }
-    
-    /* Reduce experience card spacing */
-    .experience-card .p-6 {
-        padding: 0.75rem !important;
-    }
+
+.bg-gray-800\/80.backdrop-blur-md.rounded-full.p-2.border.border-purple-500\/20 {
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        border: none !important;
 }
