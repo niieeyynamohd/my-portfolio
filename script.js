@@ -254,10 +254,22 @@ function filterCertificates(category) {
     gridContainer.classList.remove('hidden');
     gridContainer.style.display = 'grid';
     
+    // MOBILE FIX: Horizontal slider for certificates
+    if (window.innerWidth <= 768) {
+        gridContainer.style.display = 'flex';
+        gridContainer.style.flexDirection = 'row';
+        gridContainer.style.overflowX = 'auto';
+        gridContainer.style.scrollSnapType = 'x mandatory';
+        gridContainer.style.gap = '1rem';
+        gridContainer.style.padding = '1rem';
+        gridContainer.style.webkitOverflowScrolling = 'touch';
+        gridContainer.style.scrollbarWidth = 'none';
+    }
+    
     // Clear the grid container
     gridContainer.innerHTML = '';
     
-    // Filter and add items to grid with fade-up animation
+    // Filter and add items to slider with fade-up animation
     let visibleIndex = 0;
     allItems.forEach(item => {
         if (category === 'all' || item.dataset.category === category) {
@@ -266,6 +278,43 @@ function filterCertificates(category) {
             clone.classList.add('certificate-fade-up');
             // Set animation delay based on visible index
             clone.style.animationDelay = `${visibleIndex * 0.2}s`;
+            
+            // MOBILE FIX: Slider item styling
+            if (window.innerWidth <= 768) {
+                // Style marquee item as slider item
+                clone.style.flex = '0 0 85%';
+                clone.style.scrollSnapAlign = 'center';
+                clone.style.width = '85%';
+                clone.style.maxWidth = '400px';
+                
+                // Hide text content
+                const content = clone.querySelector('.certificate-card__content');
+                if (content) content.style.display = 'none';
+                
+                // Style card container
+                const card = clone.querySelector('.certificate-card');
+                if (card) {
+                    card.style.background = 'none';
+                    card.style.border = 'none';
+                    card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+                    card.style.padding = '0';
+                    card.style.aspectRatio = '3/4';
+                    card.style.overflow = 'hidden';
+                    card.style.borderRadius = '1rem';
+                }
+                
+                // Big image
+                const img = clone.querySelector('img');
+                if (img) {
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '1rem';
+                    img.style.display = 'block';
+                    img.style.margin = '0';
+                }
+            }
+            
             visibleIndex++;
             gridContainer.appendChild(clone);
         }
@@ -358,4 +407,64 @@ document.addEventListener('DOMContentLoaded', function() {
             showCertificateDetails(certCard.dataset.certificateType);
         }
     });
+    
+    // MOBILE FIX: Add resize listener for slider layout
+    window.addEventListener('resize', function() {
+        const gridContainer = document.getElementById('certificatesGrid');
+        if (gridContainer && window.innerWidth <= 768) {
+            // Setup slider layout
+            gridContainer.style.display = 'flex';
+            gridContainer.style.flexDirection = 'row';
+            gridContainer.style.overflowX = 'auto';
+            gridContainer.style.scrollSnapType = 'x mandatory';
+            gridContainer.style.gap = '1rem';
+            gridContainer.style.padding = '1rem';
+            
+            // Style slide items
+            const items = gridContainer.querySelectorAll('.marquee-item');
+            items.forEach(item => {
+                item.style.flex = '0 0 85%';
+                item.style.scrollSnapAlign = 'center';
+                item.style.width = '85%';
+                item.style.maxWidth = '400px';
+            });
+            
+            // Style cards
+            const cards = gridContainer.querySelectorAll('.certificate-card');
+            cards.forEach(card => {
+                card.style.background = 'none';
+                card.style.border = 'none';
+                card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+                card.style.padding = '0';
+                card.style.aspectRatio = '3/4';
+                card.style.overflow = 'hidden';
+                card.style.borderRadius = '1rem';
+            });
+            
+            const contents = gridContainer.querySelectorAll('.certificate-card__content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Big images
+            const images = gridContainer.querySelectorAll('img');
+            images.forEach(img => {
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '1rem';
+                img.style.display = 'block';
+                img.style.margin = '0';
+            });
+        }
+    });
+    
+    // MOBILE FIX: Apply grid layout on initial load if on mobile
+    if (window.innerWidth <= 768) {
+        const gridContainer = document.getElementById('certificatesGrid');
+        if (gridContainer) {
+            gridContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            gridContainer.style.gap = '0.5rem';
+        }
+    }
 });

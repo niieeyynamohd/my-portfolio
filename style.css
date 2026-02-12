@@ -5,6 +5,72 @@
     font-family: 'Inter', sans-serif, Garamond;
 }
 
+/* CRITICAL: Certificate SLIDER for Mobile - Swipeable Gallery */
+@media (max-width: 768px) {
+    #certificatesGrid {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; /* Hide scrollbar Firefox */
+    }
+    
+    /* Hide scrollbar for Chrome, Safari */
+    #certificatesGrid::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    /* Each certificate card as slide */
+    #certificatesGrid .marquee-item {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+    
+    /* Clean card style for slider */
+    #certificatesGrid .certificate-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+        padding: 0 !important;
+        border-radius: 1rem !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        aspect-ratio: 3/4 !important;
+    }
+    
+    /* Hide all text content on mobile */
+    #certificatesGrid .certificate-card__content,
+    #certificatesGrid .certificate-card__title,
+    #certificatesGrid .certificate-card__issuer,
+    #certificatesGrid .certificate-card__details,
+    #certificatesGrid .certificate-card__description,
+    #certificatesGrid .certificate-card__date {
+        display: none !important;
+    }
+    
+    /* Big beautiful images */
+    #certificatesGrid .certificate-card_image,
+    #certificatesGrid img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 1rem !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Remove SVG icons */
+    #certificatesGrid svg {
+        display: none !important;
+    }
+}
+
 .intro {
     text-align: justify;
 }
@@ -96,9 +162,20 @@
         gap: 0.5rem !important; /* Kurangkan dari 1rem ke 0.5rem */
     }
     
-    /* Certificate Grid - 2 per row on mobile */
+    /* Certificate Grid - 2 per row on mobile - ENHANCED */
     #certificatesGrid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+    
+    /* Override Tailwind grid classes for certificates */
+    #certificatesGrid.grid-cols-1,
+    #certificatesGrid.md\:grid-cols-2,
+    #certificatesGrid.lg\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    #certificatesGrid.gap-6 {
         gap: 0.5rem !important;
     }
     
@@ -114,6 +191,14 @@
     
     .certificate-card_image {
         padding: 4px !important;
+    }
+    
+    /* Make sure images don't overflow on mobile */
+    .certificate-card_image img,
+    #certificatesGrid .certificate-card_image img {
+        max-height: 200px !important;
+        width: 100% !important;
+        object-fit: contain !important;
     }
     
     .certificate-card__content {
@@ -548,12 +633,117 @@ video {
     display: none;
 }
 
-/* Mobile grid adjustment */
+/* Mobile SLIDER - Horizontal Scrolling Gallery */
+@media (max-width: 768px) {
+    #certificatesGrid {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    
+    /* Hide scrollbar */
+    #certificatesGrid::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    /* Slide items */
+    #certificatesGrid .marquee-item {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+        display: block !important;
+        width: 85% !important;
+        max-width: 400px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Card styling for slider */
+    #certificatesGrid .certificate-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        aspect-ratio: 3/4 !important;
+        overflow: hidden !important;
+        border-radius: 1rem !important;
+    }
+    
+    /* Hide all text content */
+    #certificatesGrid .certificate-card__content,
+    #certificatesGrid .certificate-card__title,
+    #certificatesGrid .certificate-card__issuer,
+    #certificatesGrid .certificate-card__details,
+    #certificatesGrid .certificate-card__description,
+    #certificatesGrid .certificate-card__date,
+    #certificatesGrid p,
+    #certificatesGrid svg {
+        display: none !important;
+    }
+    
+    /* Full image in slider */
+    #certificatesGrid .marquee-item img,
+    #certificatesGrid img.certificate-card_image,
+    #certificatesGrid .certificate-card_image,
+    #certificatesGrid img {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 1rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
 @media (max-width: 480px) {
     #certificatesGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-        padding: 0 1rem;
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 0.75rem !important;
+        padding: 0.75rem !important;
+    }
+    
+    /* Slider items on small screens */
+    #certificatesGrid .marquee-item {
+        flex: 0 0 90% !important;
+        scroll-snap-align: center !important;
+        width: 90% !important;
+        max-width: 350px !important;
+    }
+    
+    /* Card for slider */
+    #certificatesGrid .certificate-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+        padding: 0 !important;
+        aspect-ratio: 3/4 !important;
+        overflow: hidden !important;
+        border-radius: 0.75rem !important;
+    }
+    
+    #certificatesGrid .certificate-card__content,
+    #certificatesGrid p,
+    #certificatesGrid svg {
+        display: none !important;
+    }
+    
+    /* Full images in slider */
+    #certificatesGrid img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 0.75rem !important;
+        margin: 0 !important;
     }
 }
 
@@ -564,10 +754,28 @@ video {
     width: 350px;
 }
 
+/* CRITICAL: Override marquee-item for grid on mobile */
+@media (max-width: 768px) {
+    #certificatesGrid .marquee-item {
+        flex-shrink: initial !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
 @media (max-width: 480px) {
     .marquee-item {
         width: 220px;
         margin-right: 0.75rem;
+    }
+    
+    /* Override for grid */
+    #certificatesGrid .marquee-item {
+        flex-shrink: initial !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
