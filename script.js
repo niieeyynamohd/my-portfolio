@@ -329,10 +329,122 @@ function attachCertificateEventListeners() {
     const certificateCards = document.querySelectorAll('#certificatesGrid .marquee-item');
     certificateCards.forEach(card => {
         card.addEventListener('click', function() {
-            const certType = this.dataset.certificateType;
-            showCertificateDetails(certType);
+            // Get the image from this card
+            const img = this.querySelector('img');
+            if (img) {
+                showImageOverlay(img.src, img.alt);
+            }
         });
     });
+}
+
+// Function to show image in fullscreen overlay
+function showImageOverlay(imageSrc, imageAlt) {
+    // Create overlay container
+    const overlay = document.createElement('div');
+    overlay.id = 'imageOverlay';
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    // Create close button
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '✕';
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10000;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    `;
+    closeBtn.onmouseover = () => {
+        closeBtn.style.background = 'rgba(255, 255, 255, 0.3)';
+        closeBtn.style.transform = 'scale(1.1)';
+    };
+    closeBtn.onmouseout = () => {
+        closeBtn.style.background = 'rgba(255, 255, 255, 0.2)';
+        closeBtn.style.transform = 'scale(1)';
+    };
+    
+    // Create image container
+    const imgContainer = document.createElement('div');
+    imgContainer.style.cssText = `
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+    
+    // Create the image
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.alt = imageAlt || 'Certificate';
+    img.style.cssText = `
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 1rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        animation: zoomIn 0.3s ease;
+    `;
+    
+    // Close overlay when clicking outside image or close button
+    const closeOverlay = () => {
+        overlay.style.animation = 'fadeOut 0.3s ease';
+        setTimeout(() => {
+            if (overlay.parentNode) {
+                overlay.parentNode.removeChild(overlay);
+            }
+        }, 300);
+    };
+    
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeOverlay();
+    });
+    
+    overlay.addEventListener('click', closeOverlay);
+    
+    // Prevent closing when clicking on image
+    img.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+    
+    // Close on ESC key
+    const handleEsc = (e) => {
+        if (e.key === 'Escape') {
+            closeOverlay();
+            document.removeEventListener('keydown', handleEsc);
+        }
+    };
+    document.addEventListener('keydown', handleEsc);
+    
+    // Assemble and show overlay
+    imgContainer.appendChild(img);
+    overlay.appendChild(closeBtn);
+    overlay.appendChild(imgContainer);
+    document.body.appendChild(overlay);
 }
 
 // Function to show experience details

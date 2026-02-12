@@ -29,6 +29,7 @@
         scroll-snap-align: center !important;
         display: block !important;
         margin: 0 !important;
+        cursor: pointer !important;
     }
     
     /* Clean card style for slider */
@@ -41,6 +42,13 @@
         overflow: hidden !important;
         width: 100% !important;
         aspect-ratio: 3/4 !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    
+    /* Hover effect to show it's clickable */
+    #certificatesGrid .marquee-item:active .certificate-card {
+        transform: scale(0.98) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
     }
     
     /* Hide all text content on mobile */
@@ -798,7 +806,24 @@ video {
 }
 
 @keyframes fadeIn {
+    from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes zoomIn {
+    from { 
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to { 
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
